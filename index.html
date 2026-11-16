@@ -1,0 +1,1469 @@
+<!doctype html>
+<html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta property="og:title" content="失智溝通紙偶劇場"><meta name="description" content="29 個失智症照顧溝通情境的紙偶動畫教案：家屬與居服員版本，常見反應 vs 建議做法。">
+<style>[hidden]{display:none!important}img{max-width:100%}</style></head><body>
+<title>失智溝通紙偶劇場</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=LXGW+WenKai+TC:wght@400;700&family=Noto+Sans+TC:wght@400;500;700&family=Fraunces:ital,wght@1,500&display=swap">
+<style>
+/* 版面：米白紙桌面上的白卡紙＋紙偶舞台；分類用印刷油墨色，✗ 玫瑰紅、✓ 鈷藍 */
+:root{
+  --paper:#f4efe4; --card:#fffdf8; --ink:#2f2a26; --ink2:#6b6259; --line:#e3d9c8;
+  --rose:#b9545f; --rose-bg:#f6e3e3; --cobalt:#3b64a0; --cobalt-bg:#e2e9f4;
+  --ochre:#9c7720; --ochre-bg:#f3ead2; --plum:#6e4f9e; --plum-bg:#ebe4f4;
+  --tape:#e9d9a6;
+  --f-display:"LXGW WenKai TC","Kaiti TC","STKaiti",serif;
+  --f-body:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;
+  --f-num:"Fraunces",Georgia,serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.7;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .45 0 0 0 0 .38 0 0 0 0 .28 0 0 0 .07 0'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23n)'/%3E%3C/svg%3E");}
+.wrap{max-width:1180px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--f-display);font-weight:700;text-wrap:balance;margin:0}
+button{font:inherit;color:inherit;cursor:pointer}
+button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid var(--cobalt);outline-offset:2px}
+a{color:var(--cobalt)}
+
+/* 頁首 */
+header.top{padding-block:28px 8px}
+.brand{display:flex;gap:18px;align-items:flex-end;flex-wrap:wrap}
+.brand h1{font-size:clamp(30px,5vw,48px);letter-spacing:.04em;line-height:1.15}
+.brand .en{font-family:var(--f-num);font-style:italic;color:var(--ink2);font-size:17px}
+.lede{max-width:46em;color:var(--ink2);margin:10px 0 0}
+
+/* 角色選擇 */
+.castbar{margin-top:22px;background:var(--card);border:1px solid var(--line);border-radius:4px;box-shadow:0 2px 8px rgba(80,60,30,.07);
+  padding:14px 16px;display:grid;grid-template-columns:auto 1fr;gap:10px 16px;align-items:center;position:relative}
+.castbar::before{content:"";position:absolute;top:-9px;left:28px;width:84px;height:20px;background:var(--tape);opacity:.85;transform:rotate(-3deg)}
+.castbar .lab{font-family:var(--f-display);font-size:17px;white-space:nowrap}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{display:flex;align-items:center;gap:8px;border:1.5px solid var(--line);background:#fff;border-radius:30px;padding:3px 14px 3px 4px;font-size:15px;transition:border-color .15s,background .15s}
+.chip img{width:38px;height:38px;object-fit:cover;object-position:50% 8%;border-radius:50%;background:var(--paper)}
+.chip[aria-pressed="true"]{border-color:var(--ink);background:var(--ochre-bg);font-weight:700}
+.castnote{grid-column:1/-1;font-size:14px;color:var(--ink2)}
+
+/* 篩選 */
+.filters{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:26px 0 16px}
+.tab{border:none;background:transparent;padding:6px 14px;border-radius:4px;font-size:16px;color:var(--ink2)}
+.tab[aria-selected="true"]{background:var(--ink);color:#fff}
+.tab .n{font-family:var(--f-num);font-style:italic;margin-left:4px;opacity:.75}
+.search{margin-left:auto;flex:1 1 200px;max-width:280px;border:1.5px solid var(--line);background:#fff;border-radius:4px;padding:8px 12px;font:inherit}
+
+/* 卡片 */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:22px;padding-bottom:40px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:4px;box-shadow:0 2px 6px rgba(80,60,30,.06);text-align:left;padding:10px 10px 14px;display:flex;flex-direction:column;gap:8px;transition:transform .15s,box-shadow .15s}
+.card:hover{transform:translateY(-3px) rotate(-.3deg);box-shadow:0 8px 18px rgba(80,60,30,.12)}
+.card .thumb{border:5px solid #fff;box-shadow:0 1px 3px rgba(0,0,0,.12)}
+.card h3{font-size:20px;line-height:1.35;padding:0 4px}
+.card p{margin:0;font-size:14px;color:var(--ink2);padding:0 4px;line-height:1.55}
+.pill{display:inline-block;font-size:12.5px;padding:1px 9px;border-radius:20px;font-weight:500;margin:0 4px;align-self:flex-start}
+.c-basic{color:var(--cobalt);background:var(--cobalt-bg)} .c-bpsd{color:var(--plum);background:var(--plum-bg)} .c-daily{color:var(--ochre);background:var(--ochre-bg)}
+
+/* 舞台 */
+.stage{position:relative;aspect-ratio:16/9;max-width:100%;overflow:hidden;background:#d9c9ac;container-type:inline-size;user-select:none}
+.stage .bg{position:absolute;inset:-3%;width:106%;height:106%;max-width:none;object-fit:cover;animation:kb 26s ease-in-out infinite alternate}
+@keyframes kb{from{transform:scale(1) translate(0,0)}to{transform:scale(1.045) translate(-1.2%,-.8%)}}
+.stage .vig{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse at 50% 55%,transparent 55%,rgba(60,40,20,.28));z-index:5}
+.stage .glow{position:absolute;inset:0;background:radial-gradient(circle at 70% 25%,rgba(255,226,150,.55),transparent 55%);opacity:0;transition:opacity 1s;z-index:4;pointer-events:none}
+.stage.lit .glow{opacity:1}
+.pup{position:absolute;bottom:4%;transform-origin:50% 100%;transition:left .9s cubic-bezier(.45,.05,.3,1);z-index:3}
+.pup .body{transform-origin:50% 100%;animation:breathe 3.2s ease-in-out infinite}
+.pup.talk .body{animation:talk .42s ease-in-out infinite}
+.pup img{display:block;width:100%;height:auto;max-width:none;filter:drop-shadow(0 .5cqw .6cqw rgba(50,30,10,.35))}
+.pup.flip img{transform:scaleX(-1)}
+.pup .shadow{position:absolute;left:12%;right:12%;bottom:-1.2cqw;height:2.2cqw;border-radius:50%;background:rgba(60,40,20,.22);filter:blur(.5cqw);z-index:-1}
+.pup.swap .body{animation:swap .22s ease-out}
+@keyframes breathe{50%{transform:scaleY(1.008)}}
+@keyframes talk{0%,100%{transform:translateY(0) rotate(0)}30%{transform:translateY(-.5%) rotate(-.6deg)}70%{transform:translateY(-.2%) rotate(.5deg)}}
+@keyframes swap{0%{transform:scale(1.04,.94)}60%{transform:scale(.98,1.03)}100%{transform:none}}
+.bubble{position:absolute;z-index:8;max-width:44%;background:#fffef9;border-radius:1.4cqw;padding:1.1cqw 1.7cqw;font-family:var(--f-display);font-size:clamp(14px,2.55cqw,30px);line-height:1.38;color:var(--ink);
+  box-shadow:0 .3cqw 0 rgba(0,0,0,.08),0 .6cqw 1.6cqw rgba(50,30,10,.22);opacity:0;transform:translateY(8px) scale(.94);transition:opacity .22s,transform .22s;pointer-events:none}
+.bubble.on{opacity:1;transform:none}
+.bubble::after{content:"";position:absolute;bottom:-1.3cqw;width:2.4cqw;height:2.4cqw;background:#fffef9;transform:rotate(45deg);left:var(--tail,20%);box-shadow:.25cqw .25cqw 0 rgba(0,0,0,.05)}
+.bubble .who{display:block;font-family:var(--f-body);font-size:.52em;font-weight:700;color:var(--ink2);letter-spacing:.06em;margin-bottom:.1em}
+.fx{position:absolute;z-index:7;width:7cqw;height:7cqw;pointer-events:none;animation:pop .5s cubic-bezier(.3,1.6,.5,1) both}
+.fx svg{width:100%;height:100%;overflow:visible}
+@keyframes pop{from{transform:scale(0) rotate(-20deg);opacity:0}}
+.prop{position:absolute;z-index:6;width:8.5cqw;pointer-events:none;filter:drop-shadow(0 .4cqw .5cqw rgba(50,30,10,.35));animation:pop .45s cubic-bezier(.3,1.5,.5,1) both}
+.prop img{width:100%;max-width:none}
+.tips{position:absolute;left:2cqw;top:2cqw;z-index:9;display:flex;flex-direction:column;gap:.8cqw;align-items:flex-start;max-width:34%}
+.tipl{background:var(--tape);color:#4a3a10;font-family:var(--f-display);font-size:clamp(11px,1.75cqw,20px);padding:.35cqw 1.2cqw;box-shadow:0 .2cqw .5cqw rgba(0,0,0,.15);transform:rotate(-1.5deg);animation:tape .4s ease-out both;clip-path:polygon(2% 0,98% 4%,100% 50%,97% 100%,1% 96%,0 50%)}
+.tipl:nth-child(even){transform:rotate(1deg)}
+@keyframes tape{from{transform:translateX(-30px) rotate(-6deg);opacity:0}}
+.stamp{position:absolute;right:2cqw;top:2cqw;z-index:9;font-family:var(--f-display);font-weight:700;font-size:clamp(13px,2.2cqw,26px);padding:.3cqw 1.4cqw;border:.32cqw solid currentColor;border-radius:.6cqw;transform:rotate(4deg);background:rgba(255,253,248,.85)}
+.stamp.bad{color:var(--rose)} .stamp.good{color:var(--cobalt)}
+.over{position:absolute;inset:0;z-index:20;display:flex;align-items:center;justify-content:center;padding:4cqw;background:rgba(244,239,228,.82);backdrop-filter:blur(3px)}
+.over .box{background:var(--card);max-width:74cqw;padding:3cqw 3.6cqw;border-radius:.6cqw;box-shadow:0 1cqw 3cqw rgba(50,30,10,.25);text-align:center;position:relative}
+.over .box::before{content:"";position:absolute;top:-1.2cqw;left:50%;width:12cqw;height:2.6cqw;margin-left:-6cqw;background:var(--tape);opacity:.9;transform:rotate(-2deg)}
+.over h3{font-size:clamp(18px,3.4cqw,40px);margin-bottom:1cqw}
+.over p{margin:0 0 1.6cqw;font-size:clamp(13px,2.1cqw,24px);color:var(--ink2);line-height:1.5}
+.over ul{text-align:left;margin:0 auto 1.6cqw;padding:0;list-style:none;font-size:clamp(13px,2cqw,22px);display:grid;gap:.6cqw}
+.over li::before{content:"✓ ";color:var(--cobalt);font-weight:700}
+.bigbtn{border:none;background:var(--ink);color:#fff;border-radius:4px;padding:.9cqw 2.6cqw;font-size:clamp(14px,2.1cqw,22px);font-weight:700;margin:.4cqw}
+.bigbtn.ghost{background:transparent;color:var(--ink);border:2px solid var(--ink)}
+.bigbtn.rose{background:var(--rose)} .bigbtn.cobalt{background:var(--cobalt)}
+.cap{position:absolute;left:0;right:0;bottom:0;z-index:10;text-align:center;padding:1cqw 4cqw 1.4cqw;font-size:clamp(13px,2.2cqw,26px);color:#fff;text-shadow:0 1px 3px rgba(0,0,0,.9);background:linear-gradient(transparent,rgba(30,20,10,.55));font-weight:500;opacity:0;transition:opacity .2s}
+.cap.on{opacity:1}
+.stage.nocap .cap{display:none}
+
+/* 教案頁 */
+#lesson{padding-block:18px 60px}
+.back{border:none;background:none;color:var(--ink2);padding:4px 0;font-size:15px}
+.lhead{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:baseline;margin:6px 0 4px}
+.lhead h2{font-size:clamp(26px,4vw,38px)}
+.situ{font-size:18px;margin:4px 0 16px;max-width:52em}
+.player{background:var(--card);border:1px solid var(--line);border-radius:4px;box-shadow:0 3px 14px rgba(80,60,30,.1);padding:10px}
+.vers{display:flex;gap:8px;margin-bottom:10px;flex-wrap:wrap}
+.ver{flex:1 1 0;min-width:0;border:2px solid var(--line);background:#fff;border-radius:4px;padding:8px 12px;text-align:left;font-size:16px;font-weight:700;display:flex;gap:10px;align-items:center}
+.ver .mk{font-family:var(--f-display);font-size:24px;width:34px;height:34px;display:grid;place-items:center;border-radius:50%}
+.ver small{display:block;font-weight:400;color:var(--ink2);font-size:13px}
+.ver.b .mk{background:var(--rose-bg);color:var(--rose)} .ver.g .mk{background:var(--cobalt-bg);color:var(--cobalt)}
+.ver.b[aria-pressed="true"]{border-color:var(--rose)} .ver.g[aria-pressed="true"]{border-color:var(--cobalt)}
+.ctrl{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:10px}
+.cb{border:1.5px solid var(--line);background:#fff;border-radius:4px;padding:6px 12px;font-size:15px;display:inline-flex;gap:6px;align-items:center}
+.cb.main{background:var(--ink);color:#fff;border-color:var(--ink);min-width:96px;justify-content:center}
+.cb[aria-pressed="true"]{background:var(--ochre-bg);border-color:var(--ochre)}
+.ctrl .sp{margin-left:auto}
+.prog{display:flex;gap:4px;margin-top:10px}
+.prog i{flex:1;height:6px;border-radius:3px;background:var(--line);cursor:pointer}
+.prog i.done{background:var(--ink2)} .prog i.cur{background:var(--ochre)}
+.cols{display:grid;grid-template-columns:1.25fr 1fr;gap:22px;margin-top:26px}
+.cols>*{min-width:0}
+.sheet{background:var(--card);border:1px solid var(--line);border-radius:4px;padding:18px 20px;box-shadow:0 2px 6px rgba(80,60,30,.05)}
+.sheet+.sheet{margin-top:18px}
+.sheet h3{font-size:22px;margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.sheet h3 .k{font-family:var(--f-num);font-style:italic;font-weight:500;color:var(--ochre);font-size:18px}
+.tiplist{display:grid;gap:10px;margin:0;padding:0;list-style:none}
+.tiplist li{display:grid;grid-template-columns:auto 1fr;gap:2px 12px}
+.tiplist b{grid-column:2;font-family:var(--f-display);font-size:18px}
+.tiplist span{grid-column:2;color:var(--ink2);font-size:15px}
+.tiplist .no{grid-row:1/3;font-family:var(--f-num);font-style:italic;font-size:22px;color:var(--ochre);line-height:1.2}
+.saybox{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.saybox>div{border-radius:4px;padding:12px 14px;min-width:0}
+.saybox .y{background:var(--cobalt-bg)} .saybox .n{background:var(--rose-bg)}
+.saybox h4{margin:0 0 6px;font-size:15px}
+.saybox .y h4{color:var(--cobalt)} .saybox .n h4{color:var(--rose)}
+.saybox ul{margin:0;padding-left:1.1em;font-size:15.5px;line-height:1.6}
+.why{margin:0;padding-left:1.2em}
+.role{border-left:4px solid var(--line);padding:6px 0 6px 12px;margin-top:10px}
+.role b{font-size:14px;letter-spacing:.05em}
+.role p{margin:2px 0 0}
+.role.me{border-color:var(--ochre);background:var(--ochre-bg)}
+.think{font-family:var(--f-display);font-size:20px;line-height:1.5}
+.prac{display:grid;gap:12px}
+.pq{border:1px dashed var(--line);border-radius:4px;padding:10px 12px}
+.pq .e{font-family:var(--f-display);font-size:18px}
+.pq .e::before{content:attr(data-who) "："; color:var(--ink2);font-size:14px;font-family:var(--f-body)}
+.pq button{margin-top:6px;border:none;background:var(--ochre-bg);color:#5c460f;border-radius:4px;padding:4px 10px;font-size:14px}
+.pq .a{margin-top:6px;color:var(--cobalt);font-family:var(--f-display);font-size:18px}
+.pq .a small{display:block;color:var(--ink2);font-family:var(--f-body);font-size:13px}
+.nav2{display:flex;justify-content:space-between;gap:10px;margin-top:26px;flex-wrap:wrap}
+.nav2 button{border:1.5px solid var(--line);background:var(--card);border-radius:4px;padding:10px 14px;text-align:left;max-width:48%}
+.nav2 small{display:block;color:var(--ink2);font-size:12.5px}
+footer{border-top:1px solid var(--line);padding-block:26px 40px;color:var(--ink2);font-size:14px}
+footer .lines{display:flex;flex-wrap:wrap;gap:10px 26px;margin-bottom:12px}
+footer .lines b{font-family:var(--f-num);font-style:italic;font-size:22px;color:var(--ink);margin-left:6px}
+footer ul{padding-left:1.1em;margin:6px 0}
+@media (max-width:820px){.cols{grid-template-columns:1fr}.saybox{grid-template-columns:1fr}.castbar{grid-template-columns:1fr}.search{max-width:none;margin-left:0}}
+@container (max-width:560px){
+  .over{padding:2cqw}.over .box{padding:2.4cqw 3cqw;max-width:92cqw}
+  .over h3{font-size:16px;margin-bottom:4px}.over p{font-size:13px;margin-bottom:6px}.over ul{display:none}
+  .bigbtn{font-size:13px;padding:5px 10px}
+  .bubble{font-size:13px;max-width:52%;padding:5px 8px}.tipl{font-size:10px}.stamp{font-size:11px}.cap{display:none}
+}
+@media (max-width:520px){.ver small{display:none}.ver{padding:6px 8px;font-size:15px}.ver .mk{width:28px;height:28px;font-size:19px}.ctrl .sp{margin-left:0}}
+.player:fullscreen{display:flex;flex-direction:column;justify-content:center;align-items:center;background:#1e1a16;border:none;padding:1vh 1vw}
+.player:fullscreen .stage{width:min(98vw,calc((100vh - 120px) * 16 / 9))}
+.player:fullscreen .vers,.player:fullscreen .ctrl,.player:fullscreen .prog{width:min(98vw,calc((100vh - 120px) * 16 / 9))}
+.player:fullscreen .vers{display:none}
+.player:fullscreen .cb{background:#2f2a26;color:#fff;border-color:#4a433c}
+@media (prefers-reduced-motion:reduce){.stage .bg,.pup .body{animation:none!important}}
+</style>
+
+<div class="wrap">
+<div id="home">
+  <header class="top">
+    <div class="brand"><h1>失智溝通紙偶劇場</h1><span class="en">Dementia Talk · Paper Puppet Lessons</span></div>
+    <p class="lede">二十九個常見情境，每個都有兩段紙偶對話：先看「常見反應」為什麼會卡住，再看「建議做法」怎麼說。選好你的身分和長輩，台詞、稱呼和配音會跟著換。</p>
+  </header>
+  <div class="castbar" id="castbar"></div>
+  <div class="filters" role="tablist" id="tabs"></div>
+  <div class="grid" id="grid"></div>
+</div>
+<div id="lesson" hidden></div>
+<footer>
+  <div class="lines"><span>失智症關懷專線<b>0800-474-580</b></span><span>長照專線<b>1966</b></span><span>安心專線（24 小時）<b>1925</b></span></div>
+  <div>本教案的溝通原則整理自：台灣失智症協會照顧技巧、Alzheimer's Association〈Communication and Alzheimer's〉、Naomi Feil 確認療法（Validation）、Teepa Snow 正向照護（Positive Approach to Care）、Kales 等人 2014 年 DICE 行為症狀處理模式（BMJ）、英國 NICE NG97 失智症指引。台詞為教學示範，實際情況請依長輩個別狀況調整；行為突然改變、出現幻覺或拒食，請與醫師、長照個管師討論。</div>
+  <div style="margin-top:10px">愛迪樂・鍾孟修 職能治療師 製作｜角色與佈景為 AI 生成紙雕插圖，配音為台灣華語語音合成</div>
+</footer>
+</div>
+
+<script>
+var PZ={"agong_a":[[136,390],[156,391],[161,391],[134,391],[214,395],[163,391],[208,391],[226,394]],"agong_b":[[224,345],[224,344],[229,342],[227,343],[226,339],[229,345],[229,344],[238,344]],"ama_a":[[104,279],[120,278],[129,278],[107,277],[163,279],[128,273],[156,279],[166,278]],"ama_b":[[155,261],[158,261],[160,261],[160,261],[155,254],[158,261],[161,259],[166,261]],"ff_a":[[128,354],[172,354],[129,354],[170,354],[155,354],[162,354],[147,356],[184,356]],"ff_b":[[146,262],[195,261],[150,262],[181,268],[176,279],[177,271],[157,274],[198,270]],"fm_a":[[201,555],[298,555],[189,555],[260,555],[258,559],[256,558],[244,559],[313,558]],"fm_b":[[318,480],[414,480],[315,475],[369,504],[391,513],[393,492],[341,515],[414,481]],"wf_a":[[103,316],[151,316],[119,315],[147,317],[132,321],[143,320],[132,320],[157,322]],"wf_b":[[175,265],[189,264],[138,262],[145,279],[179,293],[162,273],[153,286],[208,273]],"wm_a":[[114,343],[168,343],[114,343],[159,342],[153,354],[165,355],[138,352],[175,350]],"wm_b":[[134,253],[194,250],[139,248],[159,263],[173,270],[174,263],[163,269],[194,256]],"props":{"water":[191,260],"pills":[245,250],"rice":[260,217],"towel":[260,204],"sweater":[260,251],"wallet":[260,196],"album":[260,198],"keys":[248,260],"tea":[233,260],"tissue":[260,234],"bag":[260,228],"radio":[260,200]}};
+var AUDIO={"greet_ama_wf":{"bad":[[0.0,0.474],[0.724,3.25],[4.224,3.538],[8.012,4.255]],"good":[[12.518,1.234],[14.002,0.351],[14.603,3.606],[18.459,1.116],[19.825,1.599],[21.675,1.552],[23.477,2.576],[26.303,3.093]]},"greet_ama_wm":{"bad":[[0.0,0.567],[0.817,3.25],[4.317,3.312],[7.878,4.255]],"good":[[12.384,1.36],[13.993,0.351],[14.594,3.133],[17.978,1.116],[19.344,1.337],[20.931,1.552],[22.733,2.092],[25.075,3.093]]},"greet_ama_ff":{"bad":[[0.0,0.305],[0.555,3.25],[4.055,3.616],[7.921,4.255]],"good":[[12.426,1.038],[13.714,0.351],[14.315,3.928],[18.493,1.116],[19.86,1.629],[21.739,1.552],[23.541,2.422],[26.213,3.093]]},"greet_ama_fm":{"bad":[[0.0,0.393],[0.643,3.25],[4.142,3.458],[7.85,4.255]],"good":[[12.355,1.128],[13.734,0.351],[14.335,3.545],[18.13,1.116],[19.496,1.387],[21.133,1.552],[22.935,1.964],[25.149,3.093]]},"greet_agong_wf":{"bad":[[0.0,0.48],[0.73,2.755],[3.735,3.538],[7.523,3.23]],"good":[[11.003,1.214],[12.467,0.437],[13.154,3.58],[16.983,1.049],[18.282,1.599],[20.132,1.512],[21.894,2.588],[24.732,1.938]]},"greet_agong_wm":{"bad":[[0.0,0.607],[0.857,2.755],[3.862,3.312],[7.424,3.23]],"good":[[10.904,1.297],[12.451,0.437],[13.138,3.06],[16.448,1.049],[17.747,1.337],[19.334,1.512],[21.096,2.106],[23.452,1.938]]},"greet_agong_ff":{"bad":[[0.0,0.324],[0.574,2.755],[3.579,3.616],[7.445,3.23]],"good":[[10.925,1.042],[12.218,0.437],[12.904,3.945],[17.099,1.049],[18.398,1.629],[20.277,1.512],[22.04,2.404],[24.694,1.938]]},"greet_agong_fm":{"bad":[[0.0,0.41],[0.66,2.755],[3.665,3.458],[7.373,3.23]],"good":[[10.853,1.127],[12.23,0.437],[12.917,3.54],[16.707,1.049],[18.006,1.387],[19.642,1.512],[21.405,2.009],[23.664,1.938]]},"noquiz_ama_wf":{"bad":[[0.0,3.011],[3.261,1.973],[5.484,3.264],[8.997,4.298]],"good":[[13.545,3.611],[17.406,1.59],[19.246,2.071],[21.567,2.943],[24.76,1.575],[26.585,3.662],[30.497,2.904],[33.651,1.817]]},"noquiz_ama_wm":{"bad":[[0.0,2.684],[2.934,1.973],[5.157,3.083],[8.49,4.298]],"good":[[13.038,3.026],[16.315,1.59],[18.154,1.777],[20.182,2.943],[23.375,1.159],[24.784,3.662],[28.696,2.504],[31.45,1.817]]},"noquiz_ama_ff":{"bad":[[0.0,2.856],[3.106,1.973],[5.329,3.334],[8.913,4.298]],"good":[[13.461,3.536],[17.248,1.59],[19.087,2.114],[21.452,2.943],[24.644,1.841],[26.735,3.662],[30.647,2.959],[33.856,1.817]]},"noquiz_ama_fm":{"bad":[[0.0,2.505],[2.755,1.973],[4.978,3.202],[8.43,4.298]],"good":[[12.978,3.015],[16.243,1.59],[18.083,1.854],[20.188,2.943],[23.38,1.488],[25.118,3.662],[29.03,2.606],[31.887,1.817]]},"noquiz_agong_wf":{"bad":[[0.0,3.019],[3.269,1.339],[4.858,3.264],[8.372,3.467]],"good":[[12.089,3.617],[15.956,1.356],[17.562,2.071],[19.883,2.272],[22.405,1.575],[24.23,2.507],[26.987,2.904],[30.141,1.524]]},"noquiz_agong_wm":{"bad":[[0.0,2.6],[2.85,1.339],[4.438,3.083],[7.771,3.467]],"good":[[11.488,2.95],[14.689,1.356],[16.295,1.777],[18.322,2.272],[20.844,1.159],[22.253,2.507],[25.01,2.504],[27.764,1.524]]},"noquiz_agong_ff":{"bad":[[0.0,2.86],[3.11,1.339],[4.699,3.334],[8.283,3.467]],"good":[[12.0,3.491],[15.741,1.356],[17.347,2.114],[19.711,2.272],[22.233,1.841],[24.324,2.507],[27.081,2.959],[30.29,1.524]]},"noquiz_agong_fm":{"bad":[[0.0,2.498],[2.748,1.339],[4.336,3.202],[7.788,3.467]],"good":[[11.505,2.895],[14.651,1.356],[16.257,1.854],[18.361,2.272],[20.883,1.488],[22.621,2.507],[25.378,2.606],[28.234,1.524]]},"onestep_ama_wf":{"bad":[[0.0,5.363],[5.613,3.118],[8.981,1.59],[10.821,2.966]],"good":[[14.038,2.019],[16.306,0.428],[16.985,1.96],[19.194,1.139],[20.583,2.055],[22.888,1.108],[24.246,0.715],[25.211,2.278]]},"onestep_ama_wm":{"bad":[[0.0,4.858],[5.108,3.118],[8.476,1.148],[9.874,2.966]],"good":[[13.09,1.822],[15.162,0.428],[15.84,1.837],[17.927,1.139],[19.316,2.146],[21.713,0.925],[22.888,0.715],[23.853,1.815]]},"onestep_ama_ff":{"bad":[[0.0,5.408],[5.658,3.118],[9.026,1.618],[10.894,2.966]],"good":[[14.111,1.855],[16.216,0.428],[16.894,2.006],[19.151,1.139],[20.54,2.095],[22.885,1.125],[24.26,0.715],[25.225,2.109]]},"onestep_ama_fm":{"bad":[[0.0,4.97],[5.22,3.118],[8.588,1.185],[10.023,2.966]],"good":[[13.24,1.59],[15.08,0.428],[15.758,1.92],[17.928,1.139],[19.317,2.239],[21.806,0.969],[23.025,0.715],[23.991,1.772]]},"onestep_agong_wf":{"bad":[[0.0,5.379],[5.629,2.595],[8.475,1.59],[10.315,2.223]],"good":[[12.788,1.98],[15.019,0.468],[15.736,1.96],[17.946,0.561],[18.756,2.055],[21.061,1.108],[22.419,0.496],[23.165,2.327]]},"onestep_agong_wm":{"bad":[[0.0,4.897],[5.147,2.595],[7.992,1.148],[9.39,2.223]],"good":[[11.863,1.745],[13.858,0.468],[14.576,1.837],[16.663,0.561],[17.473,2.146],[19.869,0.925],[21.045,0.496],[21.791,1.868]]},"onestep_agong_ff":{"bad":[[0.0,5.319],[5.569,2.595],[8.415,1.618],[10.283,2.223]],"good":[[12.756,1.895],[14.902,0.468],[15.62,2.006],[17.876,0.561],[18.687,2.095],[21.031,1.125],[22.406,0.496],[23.152,2.166]]},"onestep_agong_fm":{"bad":[[0.0,4.944],[5.194,2.595],[8.039,1.185],[9.474,2.223]],"good":[[11.948,1.603],[13.801,0.468],[14.519,1.92],[16.689,0.561],[17.499,2.239],[19.988,0.969],[21.207,0.496],[21.953,1.761]]},"choice_ama_wf":{"bad":[[0.0,2.682],[2.932,1.768],[4.95,3.102],[8.302,1.765]],"good":[[10.318,2.238],[12.806,3.21],[16.266,1.305],[17.82,1.744],[19.814,2.356],[22.42,1.355],[24.024,1.436]]},"choice_ama_wm":{"bad":[[0.0,2.499],[2.749,1.768],[4.767,2.594],[7.611,1.765]],"good":[[9.626,2.038],[11.914,2.562],[14.726,1.305],[16.28,1.595],[18.125,2.356],[20.731,1.167],[22.147,1.436]]},"choice_ama_ff":{"bad":[[0.0,2.536],[2.786,1.768],[4.804,3.162],[8.216,1.765]],"good":[[10.231,2.021],[12.502,3.279],[16.03,1.305],[17.585,1.782],[19.617,2.356],[22.223,1.377],[23.849,1.436]]},"choice_ama_fm":{"bad":[[0.0,2.406],[2.656,1.768],[4.675,2.707],[7.631,1.765]],"good":[[9.647,1.861],[11.757,2.66],[14.667,1.305],[16.222,1.654],[18.126,2.356],[20.732,1.22],[22.202,1.436]]},"choice_agong_wf":{"bad":[[0.0,2.705],[2.955,1.33],[4.535,3.102],[7.887,1.018]],"good":[[9.155,2.183],[11.588,3.21],[15.048,0.987],[16.285,1.744],[18.279,1.459],[19.988,1.355],[21.592,1.325]]},"choice_agong_wm":{"bad":[[0.0,2.427],[2.677,1.33],[4.257,2.594],[7.1,1.018]],"good":[[8.369,1.959],[10.577,2.562],[13.389,0.987],[14.626,1.595],[16.471,1.459],[18.18,1.167],[19.596,1.325]]},"choice_agong_ff":{"bad":[[0.0,2.528],[2.778,1.33],[4.358,3.162],[7.769,1.018]],"good":[[9.038,2.081],[11.368,3.279],[14.897,0.987],[16.134,1.782],[18.166,1.459],[19.875,1.377],[21.501,1.325]]},"choice_agong_fm":{"bad":[[0.0,2.362],[2.612,1.33],[4.192,2.707],[7.149,1.018]],"good":[[8.417,1.865],[10.533,2.66],[13.442,0.987],[14.68,1.654],[16.584,1.459],[18.293,1.22],[19.762,1.325]]},"wait_ama_wf":{"bad":[[0.0,1.401],[1.651,4.719],[6.62,0.703],[7.573,1.687],[9.51,1.499]],"good":[[11.259,1.626],[null,0],[13.135,0.937],[14.321,1.347],[15.918,1.369],[17.537,2.062]]},"wait_ama_wm":{"bad":[[0.0,1.316],[1.566,4.782],[6.598,0.703],[7.551,1.348],[9.148,1.499]],"good":[[10.897,1.554],[null,0],[12.701,0.786],[13.737,1.347],[15.334,1.259],[16.843,2.062]]},"wait_ama_ff":{"bad":[[0.0,1.193],[1.443,4.808],[6.502,0.703],[7.455,1.561],[9.265,1.499]],"good":[[11.014,1.467],[null,0],[12.732,0.956],[13.938,1.347],[15.534,1.399],[17.183,2.062]]},"wait_ama_fm":{"bad":[[0.0,1.119],[1.369,4.99],[6.61,0.703],[7.563,1.29],[9.103,1.499]],"good":[[10.852,1.347],[null,0],[12.449,0.812],[13.511,1.347],[15.108,1.31],[16.668,2.062]]},"wait_agong_wf":{"bad":[[0.0,1.432],[1.682,4.719],[6.651,0.549],[7.45,1.769],[9.469,0.916]],"good":[[10.635,1.64],[null,0],[12.525,0.937],[13.712,1.356],[15.318,1.369],[16.937,2.232]]},"wait_agong_wm":{"bad":[[0.0,1.339],[1.589,4.782],[6.621,0.549],[7.419,1.41],[9.079,0.916]],"good":[[10.245,1.506],[null,0],[12.001,0.786],[13.037,1.356],[14.643,1.259],[16.152,2.232]]},"wait_agong_ff":{"bad":[[0.0,1.233],[1.483,4.808],[6.541,0.549],[7.34,1.552],[9.142,0.916]],"good":[[10.308,1.468],[null,0],[12.026,0.956],[13.232,1.356],[14.838,1.399],[16.486,2.232]]},"wait_agong_fm":{"bad":[[0.0,1.092],[1.342,4.99],[6.582,0.549],[7.381,1.239],[8.869,0.916]],"good":[[10.036,1.339],[null,0],[11.625,0.812],[12.688,1.356],[14.293,1.31],[15.853,2.232]]},"noargue_ama_wf":{"bad":[[0.0,4.002],[4.252,4.177],[8.679,3.649],[12.578,1.181],[14.009,1.507]],"good":[[15.766,4.002],[20.018,1.355],[21.623,2.167],[24.04,2.048],[26.338,4.525],[31.113,5.121],[36.484,1.683]]},"noargue_ama_wm":{"bad":[[0.0,4.002],[4.252,3.989],[8.491,3.649],[12.39,0.906],[13.547,1.507]],"good":[[15.303,4.002],[19.555,1.064],[20.869,2.167],[23.286,1.708],[25.244,4.525],[30.02,4.506],[34.776,1.683]]},"noargue_ama_ff":{"bad":[[0.0,4.002],[4.252,4.032],[8.534,3.649],[12.434,1.206],[13.889,1.507]],"good":[[15.646,4.002],[19.898,1.387],[21.535,2.167],[23.953,2.09],[26.292,4.525],[31.067,5.233],[36.55,1.683]]},"noargue_ama_fm":{"bad":[[0.0,4.002],[4.252,3.899],[8.401,3.649],[12.301,0.94],[13.49,1.507]],"good":[[15.247,4.002],[19.499,1.097],[20.845,2.167],[23.263,1.772],[25.285,4.525],[30.061,4.697],[35.008,1.683]]},"noargue_agong_wf":{"bad":[[0.0,2.525],[2.775,4.197],[7.221,3.174],[10.645,1.181],[12.076,0.952]],"good":[[13.279,2.525],[16.053,1.355],[17.658,1.714],[19.623,2.048],[21.92,3.196],[25.366,5.121],[30.737,1.534]]},"noargue_agong_wm":{"bad":[[0.0,2.525],[2.775,3.891],[6.915,3.174],[10.339,0.906],[11.495,0.952]],"good":[[12.698,2.525],[15.472,1.064],[16.786,1.714],[18.751,1.708],[20.709,3.196],[24.154,4.506],[28.91,1.534]]},"noargue_agong_ff":{"bad":[[0.0,2.525],[2.775,4.076],[7.101,3.174],[10.525,1.206],[11.981,0.952]],"good":[[13.183,2.525],[15.958,1.387],[17.595,1.714],[19.559,2.09],[21.899,3.196],[25.344,5.233],[30.827,1.534]]},"noargue_agong_fm":{"bad":[[0.0,2.525],[2.775,3.909],[6.934,3.174],[10.358,0.94],[11.547,0.952]],"good":[[12.75,2.525],[15.524,1.097],[16.871,1.714],[18.836,1.772],[20.858,3.196],[24.304,4.697],[29.25,1.534]]},"role_ama_wf":{"bad":[[0.0,3.658],[3.908,2.795],[6.953,2.485]],"good":[[9.688,3.658],[13.596,2.2],[16.046,2.005],[18.302,2.902],[21.453,3.297],[25.0,1.822],[27.072,2.846],[30.168,3.39]]},"role_ama_wm":{"bad":[[0.0,3.658],[3.908,2.259],[6.417,2.485]],"good":[[9.152,3.658],[13.06,1.852],[15.162,1.752],[17.163,2.902],[20.315,3.297],[23.862,1.567],[25.679,2.637],[28.565,3.39]]},"role_ama_ff":{"bad":[[0.0,3.658],[3.908,2.851],[7.009,2.485]],"good":[[9.744,3.658],[13.652,2.026],[15.928,2.054],[18.233,2.902],[21.384,3.297],[24.931,1.865],[27.046,2.916],[30.212,3.39]]},"role_ama_fm":{"bad":[[0.0,3.658],[3.908,2.351],[6.509,2.485]],"good":[[9.244,3.658],[13.152,1.669],[15.07,1.816],[17.136,2.902],[20.288,3.297],[23.835,1.633],[25.718,2.743],[28.71,3.39]]},"role_agong_wf":{"bad":[[0.0,2.895],[3.145,2.795],[6.19,1.574]],"good":[[8.014,2.895],[11.159,2.179],[13.588,2.005],[15.844,2.105],[18.198,2.754],[21.202,1.822],[23.274,2.846],[26.37,2.474]]},"role_agong_wm":{"bad":[[0.0,2.895],[3.145,2.259],[5.654,1.574]],"good":[[7.478,2.895],[10.623,1.773],[12.645,1.752],[14.647,2.105],[17.002,2.754],[20.006,1.567],[21.822,2.637],[24.709,2.474]]},"role_agong_ff":{"bad":[[0.0,2.895],[3.145,2.851],[6.246,1.574]],"good":[[8.07,2.895],[11.215,2.062],[13.527,2.054],[15.832,2.105],[18.186,2.754],[21.19,1.865],[23.306,2.916],[26.471,2.474]]},"role_agong_fm":{"bad":[[0.0,2.895],[3.145,2.351],[5.746,1.574]],"good":[[7.57,2.895],[10.715,1.642],[12.607,1.816],[14.673,2.105],[17.027,2.754],[20.031,1.633],[21.914,2.743],[24.907,2.474]]},"show_ama_wf":{"bad":[[0.0,6.467],[null,0],[6.717,1.586],[8.554,1.418]],"good":[[10.222,1.344],[11.816,0.888],[12.954,1.845],[15.049,1.649],[16.948,3.011],[20.208,1.405]]},"show_ama_wm":{"bad":[[0.0,5.876],[null,0],[6.126,1.278],[7.654,1.418]],"good":[[9.322,1.447],[11.019,0.888],[12.157,1.744],[14.15,1.649],[16.049,3.199],[19.498,1.405]]},"show_ama_ff":{"bad":[[0.0,6.445],[null,0],[6.695,1.62],[8.565,1.418]],"good":[[10.233,1.185],[11.668,0.888],[12.806,1.883],[14.939,1.649],[16.837,3.075],[20.162,1.405]]},"show_ama_fm":{"bad":[[0.0,5.973],[null,0],[6.223,1.336],[7.808,1.418]],"good":[[9.477,1.242],[10.969,0.888],[12.106,1.817],[14.173,1.649],[16.072,3.333],[19.655,1.405]]},"show_agong_wf":{"bad":[[0.0,6.489],[null,0],[6.739,1.586],[8.575,0.9]],"good":[[9.725,1.352],[11.327,0.715],[12.292,1.845],[14.388,1.433],[16.071,3.011],[19.331,0.909]]},"show_agong_wm":{"bad":[[0.0,5.818],[null,0],[6.068,1.278],[7.596,0.9]],"good":[[8.746,1.441],[10.437,0.715],[11.402,1.744],[13.396,1.433],[15.079,3.199],[18.528,0.909]]},"show_agong_ff":{"bad":[[0.0,6.427],[null,0],[6.677,1.62],[8.547,0.9]],"good":[[9.697,1.198],[11.145,0.715],[12.11,1.883],[14.243,1.433],[15.926,3.075],[19.251,0.909]]},"show_agong_fm":{"bad":[[0.0,5.923],[null,0],[6.173,1.336],[7.759,0.9]],"good":[[8.908,1.229],[10.388,0.715],[11.353,1.817],[13.42,1.433],[15.103,3.333],[18.686,0.909]]},"repeat_ama_wf":{"bad":[[0.0,1.664],[1.914,3.505],[5.669,1.967],[7.886,0.248],[8.383,2.275]],"good":[[10.908,1.664],[12.822,1.357],[14.429,2.959],[17.639,2.355],[20.244,1.876],[22.37,4.634],[27.254,1.819],[29.324,2.09],[31.663,0.679]]},"repeat_ama_wm":{"bad":[[0.0,1.664],[1.914,3.073],[5.237,1.967],[7.454,0.398],[8.102,2.275]],"good":[[10.626,1.664],[12.54,1.107],[13.898,2.959],[17.107,1.812],[19.17,1.876],[21.296,3.979],[25.525,1.819],[27.594,1.975],[29.819,0.679]]},"repeat_ama_ff":{"bad":[[0.0,1.664],[1.914,3.376],[5.54,1.967],[7.757,0.236],[8.243,2.275]],"good":[[10.768,1.664],[12.682,1.395],[14.327,2.959],[17.536,2.402],[20.188,1.876],[22.314,4.74],[27.304,1.819],[29.374,2.136],[31.76,0.679]]},"repeat_ama_fm":{"bad":[[0.0,1.664],[1.914,3.003],[5.167,1.967],[7.384,0.396],[8.03,2.275]],"good":[[10.555,1.664],[12.469,1.143],[13.862,2.959],[17.072,1.89],[19.212,1.876],[21.338,4.145],[25.733,1.819],[27.802,2.058],[30.111,0.679]]},"repeat_agong_wf":{"bad":[[0.0,1.17],[1.42,3.502],[5.172,1.295],[6.717,0.248],[7.215,1.232]],"good":[[8.697,1.17],[10.117,1.357],[11.725,1.836],[13.811,2.355],[16.416,1.528],[18.194,4.634],[23.078,1.484],[24.812,2.09],[27.152,0.538]]},"repeat_agong_wm":{"bad":[[0.0,1.17],[1.42,2.985],[4.655,1.295],[6.2,0.398],[6.848,1.232]],"good":[[8.33,1.17],[9.75,1.107],[11.108,1.836],[13.194,1.812],[15.256,1.528],[17.034,3.979],[21.264,1.484],[22.997,1.975],[25.222,0.538]]},"repeat_agong_ff":{"bad":[[0.0,1.17],[1.42,3.426],[5.096,1.295],[6.641,0.236],[7.128,1.232]],"good":[[8.61,1.17],[10.03,1.395],[11.675,1.836],[13.762,2.402],[16.413,1.528],[18.191,4.74],[23.181,1.484],[24.915,2.136],[27.301,0.538]]},"repeat_agong_fm":{"bad":[[0.0,1.17],[1.42,2.958],[4.628,1.295],[6.173,0.396],[6.82,1.232]],"good":[[8.302,1.17],[9.722,1.143],[11.115,1.836],[13.201,1.89],[15.342,1.528],[17.12,4.145],[21.514,1.484],[23.248,2.058],[25.556,0.538]]},"stolen_ama_wf":{"bad":[[0.0,4.565],[4.815,3.731],[8.797,3.477],[12.524,0.923]],"good":[[13.697,5.251],[19.197,2.706],[22.154,3.874],[26.277,2.116],[28.644,0.485],[29.379,4.469],[34.098,2.606],[36.954,1.639],[38.843,3.022]]},"stolen_ama_wm":{"bad":[[0.0,4.565],[4.815,3.509],[8.574,3.477],[12.301,0.712]],"good":[[13.263,5.251],[18.764,2.273],[21.287,3.874],[25.411,1.837],[27.499,0.485],[28.234,4.119],[32.603,2.606],[35.459,1.492],[37.201,3.022]]},"stolen_ama_ff":{"bad":[[0.0,4.565],[4.815,3.806],[8.871,3.477],[12.598,1.545]],"good":[[14.393,5.251],[19.894,2.766],[22.91,3.874],[27.034,2.156],[29.44,0.485],[30.175,4.569],[34.994,2.606],[37.85,1.693],[39.793,3.022]]},"stolen_ama_fm":{"bad":[[0.0,4.565],[4.815,3.657],[8.722,3.477],[12.449,1.289]],"good":[[13.988,5.251],[19.489,2.362],[22.101,3.874],[26.224,1.905],[28.38,0.485],[29.115,4.287],[33.652,2.606],[36.508,1.542],[38.3,3.022]]},"stolen_agong_wf":{"bad":[[0.0,3.66],[3.91,3.731],[7.892,2.82],[10.962,0.923]],"good":[[12.134,3.948],[16.332,2.706],[19.288,2.797],[22.336,2.116],[24.702,0.445],[25.397,4.469],[30.116,2.352],[32.718,1.639],[34.608,2.065]]},"stolen_agong_wm":{"bad":[[0.0,3.66],[3.91,3.509],[7.669,2.82],[10.739,0.712]],"good":[[11.701,3.948],[15.899,2.273],[18.422,2.797],[21.47,1.837],[23.557,0.445],[24.252,4.119],[28.622,2.352],[31.224,1.492],[32.966,2.065]]},"stolen_agong_ff":{"bad":[[0.0,3.66],[3.91,3.806],[7.966,2.82],[11.036,1.545]],"good":[[12.831,3.948],[17.028,2.766],[20.045,2.797],[23.092,2.156],[25.498,0.445],[26.193,4.569],[31.012,2.352],[33.615,1.693],[35.558,2.065]]},"stolen_agong_fm":{"bad":[[0.0,3.66],[3.91,3.657],[7.817,2.82],[10.887,1.289]],"good":[[12.426,3.948],[16.624,2.362],[19.236,2.797],[22.283,1.905],[24.438,0.445],[25.133,4.287],[29.671,2.352],[32.273,1.542],[34.065,2.065]]},"gohome_ama_wf":{"bad":[[0.0,2.92],[3.17,2.149],[5.569,3.778],[9.598,1.103],[10.951,1.303]],"good":[[12.504,2.92],[15.674,1.404],[17.328,3.037],[20.615,3.204],[24.069,3.148],[27.467,4.032],[31.749,1.843],[33.842,4.237],[38.329,2.045]]},"gohome_ama_wm":{"bad":[[0.0,2.92],[3.17,1.95],[5.37,3.778],[9.399,0.945],[10.593,1.303]],"good":[[12.146,2.92],[15.316,1.1],[16.666,3.037],[19.954,3.166],[23.37,3.148],[26.768,3.662],[30.68,1.843],[32.773,3.784],[36.807,2.045]]},"gohome_ama_ff":{"bad":[[0.0,2.92],[3.17,1.996],[5.416,3.778],[9.445,1.126],[10.821,1.303]],"good":[[12.374,2.92],[15.544,1.429],[17.223,3.037],[20.51,3.264],[24.024,3.148],[27.422,4.112],[31.785,1.843],[33.878,4.326],[38.454,2.045]]},"gohome_ama_fm":{"bad":[[0.0,2.92],[3.17,1.722],[5.142,3.778],[9.171,0.973],[10.394,1.303]],"good":[[11.947,2.92],[15.117,1.143],[16.51,3.037],[19.798,3.291],[23.338,3.148],[26.736,3.818],[30.804,1.843],[32.897,3.937],[37.084,2.045]]},"gohome_agong_wf":{"bad":[[0.0,2.005],[2.255,2.134],[4.64,3.063],[7.952,1.103],[9.306,0.939]],"good":[[10.495,2.005],[12.75,1.404],[14.404,2.095],[16.749,3.204],[20.203,2.36],[22.813,4.032],[27.095,1.655],[29.0,4.237],[33.487,1.64]]},"gohome_agong_wm":{"bad":[[0.0,2.005],[2.255,1.907],[4.412,3.063],[7.725,0.945],[8.919,0.939]],"good":[[10.108,2.005],[12.364,1.1],[13.714,2.095],[16.058,3.166],[19.475,2.36],[22.084,3.662],[25.997,1.655],[27.901,3.784],[31.935,1.64]]},"gohome_agong_ff":{"bad":[[0.0,2.005],[2.255,2.018],[4.524,3.063],[7.836,1.126],[9.213,0.939]],"good":[[10.402,2.005],[12.657,1.429],[14.337,2.095],[16.681,3.264],[20.195,2.36],[22.805,4.112],[27.167,1.655],[29.072,4.326],[33.648,1.64]]},"gohome_agong_fm":{"bad":[[0.0,2.005],[2.255,1.729],[4.234,3.063],[7.547,0.973],[8.77,0.939]],"good":[[9.959,2.005],[12.215,1.143],[13.608,2.095],[15.952,3.291],[19.493,2.36],[22.103,3.818],[26.17,1.655],[28.075,3.937],[32.263,1.64]]},"sundown_ama_wf":{"bad":[[0.0,2.399],[2.649,3.391],[6.291,1.28],[7.821,1.191]],"good":[[9.261,2.399],[11.911,4.705],[16.866,0.41],[17.525,3.197],[20.973,1.174],[22.396,4.569],[27.216,1.631],[29.097,2.111],[31.458,2.32]]},"sundown_ama_wm":{"bad":[[0.0,2.399],[2.649,3.087],[5.986,1.28],[7.516,1.029]],"good":[[8.795,2.399],[11.444,4.04],[15.734,0.41],[16.394,2.654],[19.298,1.174],[20.721,3.832],[24.803,1.631],[26.684,1.837],[28.771,2.32]]},"sundown_ama_ff":{"bad":[[0.0,2.399],[2.649,3.252],[6.151,1.28],[7.681,1.214]],"good":[[9.146,2.399],[11.795,4.6],[16.645,0.41],[17.305,3.268],[20.823,1.174],[22.246,4.663],[27.16,1.631],[29.04,2.158],[31.448,2.32]]},"sundown_ama_fm":{"bad":[[0.0,2.399],[2.649,3.113],[6.012,1.28],[7.542,1.06]],"good":[[8.852,2.399],[11.501,3.979],[15.73,0.41],[16.39,2.76],[19.4,1.174],[20.824,3.993],[25.067,1.631],[26.948,1.902],[29.1,2.32]]},"sundown_agong_wf":{"bad":[[0.0,1.758],[2.008,3.397],[5.655,0.872],[6.777,1.191]],"good":[[8.217,1.758],[10.226,4.706],[15.182,0.439],[15.87,3.197],[19.318,0.887],[20.455,4.569],[25.275,1.487],[27.012,2.111],[29.373,1.799]]},"sundown_agong_wm":{"bad":[[0.0,1.758],[2.008,3.183],[5.442,0.872],[6.564,1.029]],"good":[[7.842,1.758],[9.851,3.998],[14.098,0.439],[14.787,2.654],[17.691,0.887],[18.829,3.832],[22.911,1.487],[24.648,1.837],[26.735,1.799]]},"sundown_agong_ff":{"bad":[[0.0,1.758],[2.008,3.262],[5.52,0.872],[6.642,1.214]],"good":[[8.106,1.758],[10.115,4.597],[14.961,0.439],[15.65,3.268],[19.168,0.887],[20.305,4.663],[25.218,1.487],[26.956,2.158],[29.363,1.799]]},"sundown_agong_fm":{"bad":[[0.0,1.758],[2.008,3.084],[5.342,0.872],[6.464,1.06]],"good":[[7.773,1.758],[9.782,3.949],[13.981,0.439],[14.67,2.76],[17.68,0.887],[18.818,3.993],[23.061,1.487],[24.798,1.902],[26.95,1.799]]},"parent_ama_wf":{"bad":[[0.0,4.323],[4.573,3.166],[7.989,6.014],[14.253,0.501]],"good":[[15.004,4.323],[19.577,1.404],[21.231,0.796],[22.277,1.879],[24.406,4.733],[29.388,4.748],[34.386,2.677],[37.314,2.522],[40.086,1.977]]},"parent_ama_wm":{"bad":[[0.0,4.323],[4.573,2.791],[7.615,6.014],[13.878,0.501]],"good":[[14.629,4.323],[19.203,1.1],[20.553,0.796],[21.599,1.486],[23.335,4.733],[28.318,4.361],[32.929,2.677],[35.857,2.271],[38.377,1.977]]},"parent_ama_ff":{"bad":[[0.0,4.323],[4.573,3.053],[7.877,6.014],[14.14,0.501]],"good":[[14.891,4.323],[19.465,1.429],[21.144,0.796],[22.19,1.917],[24.358,4.733],[29.34,4.854],[34.445,2.677],[37.372,2.579],[40.201,1.977]]},"parent_ama_fm":{"bad":[[0.0,4.323],[4.573,2.669],[7.492,6.014],[13.756,0.501]],"good":[[14.507,4.323],[19.08,1.143],[20.473,0.796],[21.519,1.543],[23.313,4.733],[28.295,4.553],[33.098,2.677],[36.026,2.362],[38.638,1.977]]},"parent_agong_wf":{"bad":[[0.0,3.427],[3.677,3.206],[7.133,5.089],[12.472,0.394]],"good":[[13.116,3.427],[16.794,1.404],[18.448,0.494],[19.192,1.879],[21.32,3.27],[24.84,4.748],[29.838,1.946],[32.034,2.522],[34.806,1.313]]},"parent_agong_wm":{"bad":[[0.0,3.427],[3.677,2.671],[6.599,5.089],[11.938,0.394]],"good":[[12.582,3.427],[16.26,1.1],[17.61,0.494],[18.354,1.486],[20.09,3.27],[23.61,4.361],[28.221,1.946],[30.417,2.271],[32.938,1.313]]},"parent_agong_ff":{"bad":[[0.0,3.427],[3.677,3.084],[7.012,5.089],[12.351,0.394]],"good":[[12.995,3.427],[16.672,1.429],[18.352,0.494],[19.096,1.917],[21.263,3.27],[24.783,4.854],[29.888,1.946],[32.083,2.579],[34.912,1.313]]},"parent_agong_fm":{"bad":[[0.0,3.427],[3.677,2.653],[6.581,5.089],[11.92,0.394]],"good":[[12.564,3.427],[16.241,1.143],[17.635,0.494],[18.379,1.543],[20.172,3.27],[23.692,4.553],[28.495,1.946],[30.691,2.362],[33.303,1.313]]},"halluc_ama_wf":{"bad":[[0.0,2.859],[3.109,2.637],[5.996,4.608],[10.853,1.215]],"good":[[12.318,2.859],[15.427,2.873],[18.549,1.665],[20.464,3.998],[24.712,4.692],[29.654,1.74],[31.644,1.683]]},"halluc_ama_wm":{"bad":[[0.0,2.859],[3.109,2.816],[6.175,4.608],[11.032,1.116]],"good":[[12.398,2.859],[15.507,2.618],[18.374,1.665],[20.289,3.384],[23.923,4.238],[28.411,1.74],[30.401,1.644]]},"halluc_ama_ff":{"bad":[[0.0,2.859],[3.109,2.7],[6.059,4.608],[10.916,1.238]],"good":[[12.405,2.859],[15.513,2.939],[18.702,1.665],[20.617,4.086],[24.954,4.803],[30.006,1.74],[31.996,1.712]]},"halluc_ama_fm":{"bad":[[0.0,2.859],[3.109,2.93],[6.288,4.608],[11.146,1.15]],"good":[[12.546,2.859],[15.654,2.735],[18.639,1.665],[20.554,3.52],[24.324,4.407],[28.981,1.74],[30.971,1.706]]},"halluc_agong_wf":{"bad":[[0.0,1.855],[2.105,2.637],[4.992,3.863],[9.105,1.215]],"good":[[10.57,1.855],[12.675,2.873],[15.798,0.87],[16.918,3.998],[21.166,4.692],[26.108,1.508],[27.865,1.683]]},"halluc_agong_wm":{"bad":[[0.0,1.855],[2.105,2.816],[5.171,3.863],[9.284,1.116]],"good":[[10.65,1.855],[12.755,2.618],[15.623,0.87],[16.743,3.384],[20.377,4.238],[24.865,1.508],[26.622,1.644]]},"halluc_agong_ff":{"bad":[[0.0,1.855],[2.105,2.7],[5.055,3.863],[9.168,1.238]],"good":[[10.657,1.855],[12.762,2.939],[15.951,0.87],[17.071,4.086],[21.407,4.803],[26.46,1.508],[28.217,1.712]]},"halluc_agong_fm":{"bad":[[0.0,1.855],[2.105,2.93],[5.285,3.863],[9.398,1.15]],"good":[[10.798,1.855],[12.903,2.735],[15.887,0.87],[17.008,3.52],[20.778,4.407],[25.435,1.508],[27.192,1.706]]},"poison_ama_wf":{"bad":[[0.0,3.948],[4.198,2.696],[7.144,3.483],[10.877,1.083]],"good":[[12.21,3.948],[16.408,2.095],[18.754,3.196],[22.199,1.321],[23.77,4.028],[28.048,1.684],[29.982,3.733],[33.965,1.706]]},"poison_ama_wm":{"bad":[[0.0,3.948],[4.198,2.365],[6.813,3.483],[10.546,0.929]],"good":[[11.725,3.948],[15.923,1.89],[18.063,2.578],[20.891,1.321],[22.462,4.06],[26.772,1.684],[28.706,3.173],[32.129,1.706]]},"poison_ama_ff":{"bad":[[0.0,3.948],[4.198,2.756],[7.204,3.483],[10.938,1.117]],"good":[[12.304,3.948],[16.502,2.133],[18.886,3.257],[22.392,1.321],[23.963,4.121],[28.334,1.684],[30.268,3.811],[34.329,1.706]]},"poison_ama_fm":{"bad":[[0.0,3.948],[4.198,2.456],[6.904,3.483],[10.637,0.951]],"good":[[11.838,3.948],[16.035,1.961],[18.246,2.7],[21.196,1.321],[22.767,4.238],[27.255,1.684],[29.189,3.304],[32.743,1.706]]},"poison_agong_wf":{"bad":[[0.0,3.336],[3.586,2.696],[6.532,2.924],[9.706,1.083]],"good":[[11.039,3.336],[14.624,2.095],[16.97,3.196],[20.416,0.93],[21.596,4.028],[25.874,1.344],[27.468,3.733],[31.451,1.163]]},"poison_agong_wm":{"bad":[[0.0,3.336],[3.586,2.365],[6.201,2.924],[9.375,0.929]],"good":[[10.554,3.336],[14.14,1.89],[16.279,2.578],[19.108,0.93],[20.288,4.06],[24.598,1.344],[26.192,3.173],[29.615,1.163]]},"poison_agong_ff":{"bad":[[0.0,3.336],[3.586,2.756],[6.592,2.924],[9.766,1.117]],"good":[[11.133,3.336],[14.718,2.133],[17.102,3.257],[20.609,0.93],[21.789,4.121],[26.16,1.344],[27.754,3.811],[31.815,1.163]]},"poison_agong_fm":{"bad":[[0.0,3.336],[3.586,2.456],[6.292,2.924],[9.466,0.951]],"good":[[10.666,3.336],[14.252,1.961],[16.462,2.7],[19.413,0.93],[20.593,4.238],[25.081,1.344],[26.675,3.304],[30.229,1.163]]},"bath_ama_wf":{"bad":[[0.0,3.832],[4.082,1.329],[5.662,4.545],[10.456,3.079]],"good":[[13.785,4.121],[18.156,1.192],[19.598,4.272],[24.12,1.281],[25.651,3.47],[29.371,2.02],[31.641,3.433],[35.324,1.925]]},"bath_ama_wm":{"bad":[[0.0,3.325],[3.575,1.329],[5.154,4.698],[10.102,3.079]],"good":[[13.431,3.619],[17.3,1.192],[18.742,3.476],[22.469,1.281],[24.0,2.916],[27.166,2.02],[29.435,3.011],[32.696,1.925]]},"bath_ama_ff":{"bad":[[0.0,3.67],[3.92,1.329],[5.499,4.643],[10.392,3.079]],"good":[[13.721,4.077],[18.048,1.192],[19.49,4.364],[24.104,1.281],[25.635,3.547],[29.431,2.02],[31.701,3.5],[35.451,1.925]]},"bath_ama_fm":{"bad":[[0.0,3.256],[3.506,1.329],[5.085,4.903],[10.239,3.079]],"good":[[13.568,3.519],[17.336,1.192],[18.778,3.612],[22.64,1.281],[24.171,3.033],[27.454,2.02],[29.724,3.128],[33.102,1.925]]},"bath_agong_wf":{"bad":[[0.0,3.864],[4.114,0.786],[5.15,4.545],[9.944,2.821]],"good":[[13.015,4.162],[17.427,0.744],[18.421,4.272],[22.943,1.364],[24.558,3.47],[28.277,1.463],[29.99,3.433],[33.673,1.161]]},"bath_agong_wm":{"bad":[[0.0,3.305],[3.555,0.786],[4.591,4.698],[9.539,2.821]],"good":[[12.61,3.592],[16.451,0.744],[17.445,3.476],[21.171,1.364],[22.786,2.916],[25.952,1.463],[27.665,3.011],[30.925,1.161]]},"bath_agong_ff":{"bad":[[0.0,3.698],[3.948,0.786],[4.984,4.643],[9.876,2.821]],"good":[[12.947,4.075],[17.272,0.744],[18.266,4.364],[22.88,1.364],[24.494,3.547],[28.29,1.463],[30.003,3.5],[33.753,1.161]]},"bath_agong_fm":{"bad":[[0.0,3.186],[3.436,0.786],[4.472,4.903],[9.625,2.821]],"good":[[12.696,3.489],[16.435,0.744],[17.429,3.612],[21.29,1.364],[22.905,3.033],[26.188,1.463],[27.901,3.128],[31.279,1.161]]},"meds_ama_wf":{"bad":[[0.0,1.431],[1.681,2.799],[4.729,3.366],[8.345,3.034]],"good":[[11.629,1.723],[13.602,0.428],[14.281,4.165],[18.696,1.513],[20.458,6.627],[27.336,1.678],[29.264,2.57],[32.084,1.052]]},"meds_ama_wm":{"bad":[[0.0,1.375],[1.625,2.799],[4.674,3.184],[8.107,3.034]],"good":[[11.392,1.629],[13.271,0.428],[13.949,3.44],[17.639,1.513],[19.401,6.034],[25.685,1.678],[27.613,2.276],[30.139,1.052]]},"meds_ama_ff":{"bad":[[0.0,1.312],[1.562,2.799],[4.611,3.429],[8.29,3.034]],"good":[[11.574,1.538],[13.361,0.428],[14.04,4.264],[18.554,1.513],[20.317,6.779],[27.346,1.678],[29.274,2.623],[32.148,1.052]]},"meds_ama_fm":{"bad":[[0.0,1.189],[1.439,2.799],[4.488,3.311],[8.048,3.034]],"good":[[11.333,1.564],[13.147,0.428],[13.825,3.582],[17.657,1.513],[19.419,6.291],[25.96,1.678],[27.889,2.38],[30.518,1.052]]},"meds_agong_wf":{"bad":[[0.0,1.424],[1.674,2.179],[4.102,3.366],[7.718,2.817]],"good":[[10.785,1.698],[12.732,0.468],[13.45,4.165],[17.865,1.089],[19.204,6.627],[26.081,1.143],[27.474,2.57],[30.294,0.81]]},"meds_agong_wm":{"bad":[[0.0,1.38],[1.63,2.179],[4.058,3.184],[7.492,2.817]],"good":[[10.559,1.678],[12.487,0.468],[13.205,3.44],[16.894,1.089],[18.233,6.034],[24.517,1.143],[25.91,2.276],[28.436,0.81]]},"meds_agong_ff":{"bad":[[0.0,1.287],[1.537,2.179],[3.966,3.429],[7.645,2.817]],"good":[[10.711,1.567],[12.528,0.468],[13.246,4.264],[17.76,1.089],[19.099,6.779],[26.128,1.143],[27.521,2.623],[30.395,0.81]]},"meds_agong_fm":{"bad":[[0.0,1.194],[1.444,2.179],[3.873,3.311],[7.433,2.817]],"good":[[10.5,1.468],[12.218,0.468],[12.935,3.582],[16.767,1.089],[18.106,6.291],[24.647,1.143],[26.04,2.38],[28.669,0.81]]},"angry_ama_wf":{"bad":[[0.0,1.607],[1.857,3.405],[5.512,3.15],[8.911,2.728]],"good":[[11.889,3.405],[15.544,1.716],[17.509,1.141],[18.9,3.766],[22.916,4.144],[27.31,1.921],[29.481,3.421],[33.151,0.428]]},"angry_ama_wm":{"bad":[[0.0,1.594],[1.844,3.405],[5.499,3.005],[8.754,2.728]],"good":[[11.732,3.405],[15.386,1.623],[17.259,1.001],[18.51,3.766],[22.526,3.921],[26.698,1.921],[28.869,2.928],[32.047,0.428]]},"angry_ama_ff":{"bad":[[0.0,1.451],[1.701,3.405],[5.355,3.217],[8.822,2.728]],"good":[[11.8,3.405],[15.455,1.752],[17.457,1.165],[18.873,3.766],[22.889,4.234],[27.373,1.921],[29.544,3.494],[33.288,0.428]]},"angry_ama_fm":{"bad":[[0.0,1.407],[1.657,3.405],[5.312,3.131],[8.692,2.728]],"good":[[11.67,3.405],[15.325,1.682],[17.257,1.034],[18.541,3.766],[22.557,4.08],[26.887,1.921],[29.058,3.047],[32.355,0.428]]},"angry_agong_wf":{"bad":[[0.0,1.644],[1.894,2.927],[5.071,3.15],[8.471,2.62]],"good":[[11.34,2.927],[14.517,1.716],[16.483,1.141],[17.873,3.053],[21.176,4.144],[25.57,1.507],[27.327,3.421],[30.998,0.468]]},"angry_agong_wm":{"bad":[[0.0,1.576],[1.826,2.927],[5.002,3.005],[8.257,2.62]],"good":[[11.127,2.927],[14.303,1.623],[16.176,1.001],[17.428,3.053],[20.731,3.921],[24.902,1.507],[26.659,2.928],[29.837,0.468]]},"angry_agong_ff":{"bad":[[0.0,1.453],[1.703,2.927],[4.88,3.217],[8.348,2.62]],"good":[[11.217,2.927],[14.394,1.752],[16.396,1.165],[17.812,3.053],[21.115,4.234],[25.599,1.507],[27.356,3.494],[31.1,0.468]]},"angry_agong_fm":{"bad":[[0.0,1.4],[1.65,2.927],[4.827,3.131],[8.207,2.62]],"good":[[11.077,2.927],[14.254,1.682],[16.186,1.034],[17.47,3.053],[20.773,4.08],[25.103,1.507],[26.86,3.047],[30.157,0.468]]},"night_ama_wf":{"bad":[[0.0,3.203],[3.453,4.058],[7.761,3.568],[11.579,2.563]],"good":[[14.393,3.203],[17.846,3.237],[21.333,4.036],[25.619,5.429],[31.298,1.318],[32.867,4.747],[37.863,2.509]]},"night_ama_wm":{"bad":[[0.0,3.203],[3.453,3.854],[7.557,3.568],[11.375,2.225]],"good":[[13.849,3.203],[17.303,2.637],[20.189,4.036],[24.475,5.166],[29.891,1.318],[31.459,4.023],[35.733,2.509]]},"night_ama_ff":{"bad":[[0.0,3.203],[3.453,3.963],[7.666,3.568],[11.484,2.614]],"good":[[14.348,3.203],[17.801,3.309],[21.36,4.036],[25.645,5.547],[31.443,1.318],[33.011,4.851],[38.112,2.509]]},"night_ama_fm":{"bad":[[0.0,3.203],[3.453,3.865],[7.568,3.568],[11.386,2.314]],"good":[[13.95,3.203],[17.403,2.745],[20.398,4.036],[24.683,5.389],[30.323,1.318],[31.891,4.197],[36.338,2.509]]},"night_agong_wf":{"bad":[[0.0,2.11],[2.36,4.057],[6.667,3.151],[10.068,2.563]],"good":[[12.881,2.11],[15.241,3.237],[18.729,2.73],[21.709,5.429],[27.388,0.81],[28.448,4.747],[33.444,1.667]]},"night_agong_wm":{"bad":[[0.0,2.11],[2.36,3.765],[6.375,3.151],[9.776,2.225]],"good":[[12.251,2.11],[14.611,2.637],[17.497,2.73],[20.477,5.166],[25.894,0.81],[26.953,4.023],[31.227,1.667]]},"night_agong_ff":{"bad":[[0.0,2.11],[2.36,3.963],[6.573,3.151],[9.974,2.614]],"good":[[12.837,2.11],[15.197,3.309],[18.756,2.73],[21.736,5.547],[27.534,0.81],[28.593,4.851],[33.694,1.667]]},"night_agong_fm":{"bad":[[0.0,2.11],[2.36,3.841],[6.451,3.151],[9.852,2.314]],"good":[[12.416,2.11],[14.776,2.745],[17.771,2.73],[20.751,5.389],[26.39,0.81],[27.45,4.197],[31.896,1.667]]},"hoard_ama_wf":{"bad":[[0.0,4.761],[5.011,3.169],[8.43,1.422],[10.102,2.394]],"good":[[12.746,2.744],[15.74,2.114],[18.104,1.545],[19.898,3.078],[23.227,5.951],[29.428,2.655]]},"hoard_ama_wm":{"bad":[[0.0,4.597],[4.847,3.169],[8.266,1.279],[9.795,2.394]],"good":[[12.439,2.303],[14.992,2.114],[17.356,1.269],[18.875,3.078],[22.203,5.11],[27.563,2.655]]},"hoard_ama_ff":{"bad":[[0.0,4.691],[4.941,3.169],[8.36,1.453],[10.063,2.394]],"good":[[12.707,2.516],[15.473,2.114],[17.837,1.578],[19.665,3.078],[22.993,6.07],[29.313,2.655]]},"hoard_ama_fm":{"bad":[[0.0,4.617],[4.867,3.169],[8.286,1.331],[9.867,2.394]],"good":[[12.511,2.153],[14.914,2.114],[17.277,1.324],[18.851,3.078],[22.18,5.323],[27.753,2.655]]},"hoard_agong_wf":{"bad":[[0.0,4.79],[5.04,2.8],[8.09,1.422],[9.762,1.619]],"good":[[11.631,2.688],[14.569,1.713],[16.532,1.545],[18.326,2.354],[20.931,5.951],[27.132,1.955]]},"hoard_agong_wm":{"bad":[[0.0,4.532],[4.782,2.8],[7.832,1.279],[9.361,1.619]],"good":[[11.231,2.192],[13.673,1.713],[15.636,1.269],[17.155,2.354],[19.759,5.11],[25.119,1.955]]},"hoard_agong_ff":{"bad":[[0.0,4.688],[4.938,2.8],[7.988,1.453],[9.691,1.619]],"good":[[11.56,2.59],[14.4,1.713],[16.362,1.578],[18.191,2.354],[20.795,6.07],[27.115,1.955]]},"hoard_agong_fm":{"bad":[[0.0,4.549],[4.799,2.8],[7.849,1.331],[9.429,1.619]],"good":[[11.298,2.083],[13.632,1.713],[15.595,1.324],[17.169,2.354],[19.773,5.323],[25.346,1.955]]},"notknow_ama_wf":{"bad":[[0.0,4.601],[4.851,3.365],[8.466,3.169],[11.885,0.248]],"good":[[12.383,4.601],[17.234,3.395],[20.879,2.894],[24.024,3.375],[27.648,3.598],[31.496,3.292],[35.038,2.125]]},"notknow_ama_wm":{"bad":[[0.0,4.585],[4.835,2.926],[8.011,3.169],[11.43,0.398]],"good":[[12.078,4.585],[16.912,3.117],[20.279,2.956],[23.485,3.301],[27.036,3.598],[30.884,2.758],[33.892,2.125]]},"notknow_ama_ff":{"bad":[[0.0,4.601],[4.851,2.695],[7.796,3.169],[11.215,1.132]],"good":[[12.597,4.601],[17.448,3.755],[21.453,2.894],[24.598,3.455],[28.303,3.598],[32.15,3.362],[35.763,2.125]]},"notknow_ama_fm":{"bad":[[0.0,4.585],[4.835,2.872],[7.957,3.169],[11.376,0.925]],"good":[[12.551,4.585],[17.385,3.485],[21.12,2.956],[24.326,3.466],[28.043,3.598],[31.89,2.88],[35.02,2.125]]},"notknow_agong_wf":{"bad":[[0.0,3.997],[4.247,3.344],[7.84,2.893],[10.983,0.248]],"good":[[11.481,3.997],[15.727,3.355],[19.333,1.908],[21.49,3.375],[25.115,2.74],[28.105,3.292],[31.647,1.819]]},"notknow_agong_wm":{"bad":[[0.0,3.979],[4.229,2.822],[7.301,2.893],[10.444,0.398]],"good":[[11.092,3.979],[15.321,3.04],[18.611,1.866],[20.727,3.301],[24.278,2.74],[27.268,2.758],[30.276,1.819]]},"notknow_agong_ff":{"bad":[[0.0,3.997],[4.247,2.741],[7.238,2.893],[10.38,1.132]],"good":[[11.762,3.997],[16.009,3.781],[20.04,1.908],[22.198,3.455],[25.903,2.74],[28.893,3.362],[32.505,1.819]]},"notknow_agong_fm":{"bad":[[0.0,3.979],[4.229,2.835],[7.314,2.893],[10.457,0.925]],"good":[[11.631,3.979],[15.861,3.473],[19.584,1.866],[21.699,3.466],[25.416,2.74],[28.406,2.88],[31.536,1.819]]},"noeat_ama_wf":{"bad":[[0.0,2.682],[null,0],[2.932,1.583],[4.765,0.905]],"good":[[5.92,2.531],[8.701,3.941],[12.892,0.335],[13.477,2.227],[15.954,1.249],[17.453,3.077],[20.78,2.521]]},"noeat_ama_wm":{"bad":[[0.0,2.375],[null,0],[2.625,1.209],[4.084,0.905]],"good":[[5.239,2.288],[7.778,3.347],[11.375,0.335],[11.96,1.98],[14.191,1.249],[15.689,2.425],[18.364,2.521]]},"noeat_ama_ff":{"bad":[[0.0,2.541],[null,0],[2.791,1.613],[4.654,0.905]],"good":[[5.809,2.385],[8.444,4.023],[12.717,0.335],[13.302,2.277],[15.829,1.249],[17.328,2.948],[20.526,2.521]]},"noeat_ama_fm":{"bad":[[0.0,2.224],[null,0],[2.474,1.245],[3.968,0.905]],"good":[[5.123,2.102],[7.475,3.478],[11.203,0.335],[11.788,2.06],[14.098,1.249],[15.597,2.414],[18.261,2.521]]},"noeat_agong_wf":{"bad":[[0.0,2.694],[null,0],[2.944,1.583],[4.778,0.642]],"good":[[5.67,2.553],[8.472,3.941],[12.664,0.451],[13.364,2.227],[15.841,1.323],[17.414,3.135],[20.8,2.205]]},"noeat_agong_wm":{"bad":[[0.0,2.371],[null,0],[2.621,1.209],[4.081,0.642]],"good":[[4.973,2.216],[7.439,3.347],[11.036,0.451],[11.737,1.98],[13.967,1.323],[15.54,2.495],[18.285,2.205]]},"noeat_agong_ff":{"bad":[[0.0,2.56],[null,0],[2.81,1.613],[4.673,0.642]],"good":[[5.565,2.469],[8.284,4.023],[12.557,0.451],[13.257,2.277],[15.785,1.323],[17.358,2.909],[20.517,2.205]]},"noeat_agong_fm":{"bad":[[0.0,2.161],[null,0],[2.411,1.245],[3.906,0.642]],"good":[[4.798,2.059],[7.107,3.478],[10.835,0.451],[11.535,2.06],[13.845,1.323],[15.418,2.389],[18.058,2.205]]},"incont_ama_wf":{"bad":[[0.0,2.654],[2.904,3.371],[6.525,2.376],[9.151,2.549]],"good":[[11.95,2.051],[14.252,4.188],[18.69,1.662],[20.602,3.19],[24.043,1.587],[25.879,6.673],[32.802,0.428]]},"incont_ama_wm":{"bad":[[0.0,2.744],[2.994,3.371],[6.615,1.889],[8.754,2.549]],"good":[[11.553,1.841],[13.644,3.4],[17.295,1.662],[19.207,2.867],[22.324,1.587],[24.161,5.919],[30.329,0.428]]},"incont_ama_ff":{"bad":[[0.0,2.515],[2.765,3.371],[6.386,2.425],[9.061,2.549]],"good":[[11.861,1.855],[13.966,4.29],[18.505,1.662],[20.418,3.267],[23.934,1.587],[25.771,6.809],[32.83,0.428]]},"incont_ama_fm":{"bad":[[0.0,2.69],[2.94,3.371],[6.561,1.971],[8.782,2.549]],"good":[[11.581,1.577],[13.408,3.542],[17.2,1.662],[19.112,2.979],[22.342,1.587],[24.178,6.182],[30.611,0.428]]},"incont_agong_wf":{"bad":[[0.0,2.682],[2.932,2.912],[6.094,2.376],[8.72,2.571]],"good":[[11.541,2.004],[13.795,4.188],[18.233,0.91],[19.393,3.19],[22.834,1.446],[24.529,6.673],[31.452,0.468]]},"incont_agong_wm":{"bad":[[0.0,2.784],[3.034,2.912],[6.196,1.889],[8.336,2.571]],"good":[[11.156,1.785],[13.191,3.4],[16.842,0.91],[18.002,2.867],[21.119,1.446],[22.815,5.919],[28.984,0.468]]},"incont_agong_ff":{"bad":[[0.0,2.562],[2.812,2.912],[5.974,2.425],[8.649,2.571]],"good":[[11.47,1.917],[13.637,4.29],[18.176,0.91],[19.337,3.267],[22.854,1.446],[24.549,6.809],[31.608,0.468]]},"incont_agong_fm":{"bad":[[0.0,2.649],[2.899,2.912],[6.061,1.971],[8.283,2.571]],"good":[[11.103,1.572],[12.925,3.542],[16.717,0.91],[17.877,2.979],[21.107,1.446],[22.802,6.182],[29.235,0.468]]},"useless_ama_wf":{"bad":[[0.0,3.91],[4.16,2.411],[6.821,0.75]],"good":[[7.821,3.91],[11.981,3.09],[15.32,2.914],[18.484,6.795],[25.529,1.014],[26.792,6.593],[33.635,2.254]]},"useless_ama_wm":{"bad":[[0.0,3.91],[4.16,2.014],[6.424,0.75]],"good":[[7.424,3.91],[11.583,2.489],[14.323,2.914],[17.486,6.238],[23.975,1.014],[25.238,6.166],[31.655,2.254]]},"useless_ama_ff":{"bad":[[0.0,3.91],[4.16,2.466],[6.876,0.75]],"good":[[7.876,3.91],[12.035,3.154],[15.44,2.914],[18.603,5.423],[24.277,1.014],[25.54,6.746],[32.536,2.254]]},"useless_ama_fm":{"bad":[[0.0,3.91],[4.16,2.108],[6.518,0.75]],"good":[[7.518,3.91],[11.678,2.593],[14.521,2.914],[17.685,5.005],[22.94,1.014],[24.203,6.431],[30.884,2.254]]},"useless_agong_wf":{"bad":[[0.0,2.708],[2.958,2.411],[5.619,0.648]],"good":[[6.518,2.708],[9.476,3.09],[12.816,1.992],[15.058,6.795],[22.103,0.551],[22.904,6.593],[29.746,1.565]]},"useless_agong_wm":{"bad":[[0.0,2.708],[2.958,2.014],[5.222,0.648]],"good":[[6.121,2.708],[9.079,2.489],[11.818,1.992],[14.06,6.238],[20.549,0.551],[21.35,6.166],[27.766,1.565]]},"useless_agong_ff":{"bad":[[0.0,2.708],[2.958,2.466],[5.674,0.648]],"good":[[6.573,2.708],[9.531,3.154],[12.935,1.992],[15.177,5.423],[20.851,0.551],[21.652,6.746],[28.648,1.565]]},"useless_agong_fm":{"bad":[[0.0,2.708],[2.958,2.108],[5.316,0.648]],"good":[[6.215,2.708],[9.173,2.593],[12.016,1.992],[14.259,5.005],[19.514,0.551],[20.315,6.431],[26.996,1.565]]},"wakeup_ama_wf":{"bad":[[0.0,4.528],[4.778,3.427],[8.455,1.093],[9.798,1.558]],"good":[[11.605,2.994],[14.849,1.392],[16.492,5.7],[22.442,2.392],[25.084,1.801],[27.135,2.727],[30.112,1.826]]},"wakeup_ama_wm":{"bad":[[0.0,4.628],[4.878,3.427],[8.555,0.923],[9.728,1.558]],"good":[[11.536,2.276],[14.062,1.392],[15.704,5.442],[21.396,1.855],[23.501,1.801],[25.552,2.521],[28.322,1.826]]},"wakeup_ama_ff":{"bad":[[0.0,4.429],[4.679,3.427],[8.356,1.127],[9.733,1.558]],"good":[[11.541,2.902],[14.692,1.392],[16.335,6.399],[22.983,2.442],[25.676,1.801],[27.727,2.785],[30.762,1.826]]},"wakeup_ama_fm":{"bad":[[0.0,4.655],[4.905,3.427],[8.583,0.953],[9.786,1.558]],"good":[[11.593,2.264],[14.107,1.392],[15.75,6.143],[22.143,1.951],[24.343,1.801],[26.394,2.625],[29.269,1.826]]},"wakeup_agong_wf":{"bad":[[0.0,4.553],[4.803,2.672],[7.724,1.093],[9.067,1.049]],"good":[[10.366,3.059],[13.675,1.107],[15.032,5.7],[20.982,2.392],[23.624,1.387],[25.261,2.727],[28.238,1.439]]},"wakeup_agong_wm":{"bad":[[0.0,4.663],[4.913,2.672],[7.835,0.923],[9.008,1.049]],"good":[[10.307,2.324],[12.881,1.107],[14.238,5.442],[19.929,1.855],[22.034,1.387],[23.671,2.521],[26.442,1.439]]},"wakeup_agong_ff":{"bad":[[0.0,4.48],[4.73,2.672],[7.652,1.127],[9.028,1.049]],"good":[[10.327,2.871],[13.448,1.107],[14.805,6.399],[21.454,2.442],[24.146,1.387],[25.783,2.785],[28.818,1.439]]},"wakeup_agong_fm":{"bad":[[0.0,4.614],[4.864,2.672],[7.785,0.953],[8.988,1.049]],"good":[[10.287,2.264],[12.801,1.107],[14.158,6.143],[20.551,1.951],[22.751,1.387],[24.388,2.625],[27.263,1.439]]},"doctor_ama_wf":{"bad":[[0.0,3.526],[3.776,2.812],[6.837,2.995],[10.083,3.627]],"good":[[13.96,3.446],[17.656,2.812],[20.718,4.462],[25.429,3.016],[28.695,1.246],[30.191,3.036],[33.477,3.499]]},"doctor_ama_wm":{"bad":[[0.0,3.05],[3.3,2.812],[6.361,2.38],[8.991,3.627]],"good":[[12.868,2.905],[16.023,2.812],[19.085,3.98],[23.314,2.584],[26.148,1.246],[27.644,2.465],[30.358,3.499]]},"doctor_ama_ff":{"bad":[[0.0,3.427],[3.677,2.812],[6.738,3.059],[10.047,3.627]],"good":[[13.924,3.351],[17.525,2.812],[20.587,4.556],[25.392,3.103],[28.745,1.246],[30.241,3.107],[33.598,3.499]]},"doctor_ama_fm":{"bad":[[0.0,2.961],[3.211,2.812],[6.273,2.486],[9.009,3.627]],"good":[[12.886,2.851],[15.987,2.812],[19.048,4.151],[23.45,2.682],[26.382,1.246],[27.878,2.571],[30.698,3.499]]},"doctor_agong_wf":{"bad":[[0.0,3.5],[3.75,2.13],[6.13,2.995],[9.375,3.023]],"good":[[12.648,3.407],[16.305,2.13],[18.684,4.462],[23.396,3.016],[26.662,0.717],[27.629,3.036],[30.916,2.698]]},"doctor_agong_wm":{"bad":[[0.0,2.971],[3.221,2.13],[5.6,2.38],[8.23,3.023]],"good":[[11.503,2.878],[14.63,2.13],[17.01,3.98],[21.24,2.584],[24.073,0.717],[25.04,2.465],[27.755,2.698]]},"doctor_agong_ff":{"bad":[[0.0,3.431],[3.681,2.13],[6.061,3.059],[9.37,3.023]],"good":[[12.642,3.344],[16.237,2.13],[18.616,4.556],[23.422,3.103],[26.775,0.717],[27.742,3.107],[31.099,2.698]]},"doctor_agong_fm":{"bad":[[0.0,2.898],[3.148,2.13],[5.528,2.486],[8.264,3.023]],"good":[[11.537,2.769],[14.556,2.13],[16.936,4.151],[21.337,2.682],[24.269,0.717],[25.236,2.571],[28.057,2.698]]},"dress_ama_wf":{"bad":[[0.0,3.347],[3.597,0.944],[4.792,2.661],[7.703,1.583]],"good":[[9.536,3.867],[13.653,1.284],[15.187,3.182],[18.619,0.835],[19.704,3.38],[23.334,1.732],[25.316,2.294],[27.86,0.774]]},"dress_ama_wm":{"bad":[[0.0,2.902],[3.152,0.944],[4.346,2.217],[6.813,1.583]],"good":[[8.647,3.444],[12.341,1.284],[13.875,2.619],[16.744,0.835],[17.828,2.766],[20.845,1.732],[22.826,1.975],[25.052,0.774]]},"dress_ama_ff":{"bad":[[0.0,3.244],[3.494,0.944],[4.688,2.722],[7.66,1.583]],"good":[[9.493,3.696],[13.439,1.284],[14.973,3.246],[18.469,0.835],[19.554,3.458],[23.262,1.732],[25.244,2.151],[27.644,0.774]]},"dress_ama_fm":{"bad":[[0.0,2.797],[3.047,0.944],[4.241,2.307],[6.799,1.583]],"good":[[8.632,3.368],[12.25,1.284],[13.784,2.74],[16.773,0.835],[17.858,2.883],[20.991,1.732],[22.973,1.956],[25.179,0.774]]},"dress_agong_wf":{"bad":[[0.0,3.36],[3.61,0.666],[4.527,2.661],[7.438,1.126]],"good":[[8.814,3.865],[12.929,0.74],[13.919,3.182],[17.352,0.505],[18.106,3.38],[21.737,1.177],[23.164,2.316],[25.729,0.576]]},"dress_agong_wm":{"bad":[[0.0,2.91],[3.16,0.666],[4.076,2.217],[6.543,1.126]],"good":[[7.919,3.364],[11.533,0.74],[12.523,2.619],[15.392,0.505],[16.147,2.766],[19.163,1.177],[20.59,2.013],[22.853,0.576]]},"dress_agong_ff":{"bad":[[0.0,3.225],[3.475,0.666],[4.391,2.722],[7.364,1.126]],"good":[[8.74,3.693],[12.683,0.74],[13.673,3.246],[17.169,0.505],[17.923,3.458],[21.631,1.177],[23.058,2.142],[25.45,0.576]]},"dress_agong_fm":{"bad":[[0.0,2.758],[3.008,0.666],[3.925,2.307],[6.482,1.126]],"good":[[7.858,3.39],[11.498,0.74],[12.488,2.74],[15.477,0.505],[16.232,2.883],[19.365,1.177],[20.792,1.943],[22.985,0.576]]},"firstvisit_ama_wf":{"bad":[[0.0,3.25],[3.5,3.869],[7.619,3.052],[10.921,2.728]],"good":[[13.9,4.402],[18.552,1.211],[20.012,3.526],[23.788,3.606],[27.644,4.389],[32.282,1.997]]},"firstvisit_ama_wm":{"bad":[[0.0,2.855],[3.105,3.869],[7.224,2.512],[9.986,2.728]],"good":[[12.964,3.697],[16.911,1.211],[18.372,2.716],[21.337,3.606],[25.193,4.287],[29.73,1.997]]},"firstvisit_ama_ff":{"bad":[[0.0,2.83],[3.08,3.869],[7.199,2.335],[9.785,2.728]],"good":[[12.763,4.68],[17.693,1.211],[19.154,3.616],[23.019,3.606],[26.875,4.479],[31.604,1.997]]},"firstvisit_ama_fm":{"bad":[[0.0,2.532],[2.782,3.869],[6.901,1.958],[9.109,2.728]],"good":[[12.087,4.118],[16.456,1.211],[17.916,2.831],[20.997,3.606],[24.853,4.462],[29.565,1.997]]},"firstvisit_agong_wf":{"bad":[[0.0,3.2],[3.45,3.425],[7.125,3.052],[10.427,2.704]],"good":[[13.382,4.389],[18.021,0.674],[18.945,3.526],[22.721,2.433],[25.404,4.389],[30.043,1.484]]},"firstvisit_agong_wm":{"bad":[[0.0,2.81],[3.06,3.425],[6.736,2.512],[9.497,2.704]],"good":[[12.452,3.746],[16.448,0.674],[17.372,2.716],[20.337,2.433],[23.02,4.287],[27.558,1.484]]},"firstvisit_agong_ff":{"bad":[[0.0,2.846],[3.096,3.425],[6.771,2.335],[9.357,2.704]],"good":[[12.311,4.675],[17.236,0.674],[18.161,3.616],[22.027,2.433],[24.71,4.479],[29.439,1.484]]},"firstvisit_agong_fm":{"bad":[[0.0,2.455],[2.705,3.425],[6.38,1.958],[8.589,2.704]],"good":[[11.543,4.131],[15.924,0.674],[16.848,2.831],[19.929,2.433],[22.612,4.462],[27.324,1.484]]},"money_ama_wf":{"bad":[[0.0,4.849],[5.099,2.995],[8.344,2.291]],"good":[[10.884,4.849],[15.983,2.541],[18.775,3.188],[22.213,3.674],[26.137,1.119],[27.507,4.519],[32.276,1.58]]},"money_ama_wm":{"bad":[[0.0,4.849],[5.099,2.548],[7.897,2.291]],"good":[[10.438,4.849],[15.536,2.156],[17.942,3.188],[21.381,3.165],[24.796,1.119],[26.165,3.763],[30.178,1.58]]},"money_ama_ff":{"bad":[[0.0,4.849],[5.099,3.04],[8.389,2.291]],"good":[[10.93,4.849],[16.029,2.587],[18.866,3.188],[22.304,3.752],[26.306,1.119],[27.676,4.122],[32.048,1.58]]},"money_ama_fm":{"bad":[[0.0,4.849],[5.099,2.649],[7.998,2.291]],"good":[[10.539,4.849],[15.638,2.241],[18.129,3.188],[21.568,3.298],[25.116,1.119],[26.485,3.565],[30.3,1.58]]},"money_agong_wf":{"bad":[[0.0,3.705],[3.955,2.995],[7.2,1.527]],"good":[[8.977,3.705],[12.932,2.541],[15.723,2.114],[18.087,3.674],[22.012,1.192],[23.454,4.519],[28.223,1.576]]},"money_agong_wm":{"bad":[[0.0,3.705],[3.955,2.548],[6.753,1.527]],"good":[[8.53,3.705],[12.485,2.156],[14.891,2.114],[17.255,3.165],[20.67,1.192],[22.112,3.763],[26.125,1.576]]},"money_agong_ff":{"bad":[[0.0,3.705],[3.955,3.04],[7.245,1.527]],"good":[[9.022,3.705],[12.977,2.587],[15.814,2.114],[18.178,3.752],[22.181,1.192],[23.623,4.122],[27.995,1.576]]},"money_agong_fm":{"bad":[[0.0,3.705],[3.955,2.649],[6.854,1.527]],"good":[[8.631,3.705],[12.586,2.241],[15.078,2.114],[17.442,3.298],[20.99,1.192],[22.432,3.565],[26.247,1.576]]}};
+// 角色組合與台詞代稱
+var CAST = {
+  ama:   { name: "阿嬤", kind: "elder" },
+  agong: { name: "阿公", kind: "elder" },
+  wf: { name: "居服員小芳", short: "小芳", role: "w", g: "f", label: "女居服員" },
+  wm: { name: "居服員阿傑", short: "阿傑", role: "w", g: "m", label: "男居服員" },
+  ff: { name: "女兒淑芬", short: "淑芬", role: "f", g: "f", label: "女兒（家屬）" },
+  fm: { name: "兒子志明", short: "志明", role: "f", g: "m", label: "兒子（家屬）" }
+};
+function fillText(t, el, cg) {
+  var c = CAST[cg], fam = c.role === "f";
+  var chen = fam ? (el === "ama" ? "媽" : "爸") : (el === "ama" ? "阿嬤" : "阿公");
+  var intro = fam ? ("我是" + c.short + "啦，你" + (c.g === "f" ? "女兒" : "兒子")) : ("我是居服員" + c.short);
+  // 先換簡單代稱，再處理 {A:|} {R:|} {G:|}（可巢狀：由內而外）
+  t = t.replace(/\{稱\}/g, chen).replace(/\{自介\}/g, intro).replace(/\{名\}/g, c.short)
+       .replace(/\{陌生\}/g, c.g === "f" ? "小姐" : "先生");
+  var re = /\{([ARG]):([^{}|]*)\|([^{}]*)\}/;
+  for (var i = 0; i < 20 && re.test(t); i++) {
+    t = t.replace(re, function (_, k, a, b) {
+      var first = k === "A" ? el === "ama" : k === "R" ? fam : c.g === "f";
+      return first ? a : b;
+    });
+  }
+  return t;
+}
+if (typeof module !== "undefined") module.exports = { CAST: CAST, fillText: fillText };
+
+// 失智症溝通動畫教案：情境資料（上）溝通基本功＋部分行為症狀
+// 台詞代稱：{稱}=家屬叫媽/爸、居服員叫阿嬤/阿公；{名}=照顧者名字；{自介}=自我介紹；{陌生}=長輩叫不認得的人
+// {A:阿嬤用|阿公用} 依長輩性別；{R:家屬用|居服員用} 依角色；{G:女性|男性} 依照顧者性別
+// 台詞欄位：w 說話者 e/c、t 台詞、e/c 姿勢（不寫就沿用）、fx 特效、tip 技巧標籤、prop 道具、x 照顧者位置(0~1)
+var SCENARIOS = [];
+SCENARIOS.push(
+{
+  id: "greet", cat: "basic", title: "打招呼：從正面靠近", bg: "bg_living", mode: "sit", minutes: 1,
+  sub: "長輩坐在客廳，你要開始陪伴或照顧。第一句話怎麼開口？",
+  think: "如果有人從你背後突然拍你、問你「你知道我是誰嗎」，你會有什麼感覺？",
+  why: ["失智長輩的視野常會變窄，從側面或背後靠近容易嚇到他。", "要他「猜你是誰」等於在考記憶，答不出來會覺得丟臉、緊張。", "第一印象決定接下來是合作還是抗拒。"],
+  tips: [
+    { t: "從正面慢慢靠近", d: "在對方看得到的地方出現，停在一個手臂遠的距離。" },
+    { t: "蹲低、眼睛同高", d: "對方坐著你就蹲下或坐下，不要居高臨下。" },
+    { t: "先叫名字、再自我介紹", d: "每次都主動說出自己是誰，不讓對方猜。" },
+    { t: "微笑、語速放慢", d: "表情和語氣比內容更先被感受到。" }
+  ],
+  say: ["{稱}，{自介}，我來陪你喔。", "{稱}，今天穿這件好好看喔。"],
+  avoid: ["你知道我是誰嗎？", "你看我是誰？猜猜看！", "（從背後拍肩膀）"],
+  fam: "家人最常問「我是誰」。其實直接說「媽，我是淑芬」就好，長輩會鬆一口氣。",
+  wk: "每次進門都重新自我介紹、亮出識別證，就算上週才見過。",
+  bad: [
+    { w: "c", t: "{稱}！", c: "walk", x: 0.86, e: "s.calm" },
+    { w: "e", t: "哎唷！嚇我一跳！", e: "s.push", fx: "shock" },
+    { w: "c", t: "你看我是誰？你知道我是誰嗎？", c: "point", x: 0.72 },
+    { w: "e", t: "你……你是誰啦？走開啦！", e: "s.angry", fx: "anger" }
+  ],
+  good: [
+    { w: "c", t: "{稱}，午安。", c: "talk", x: 0.74, e: "s.calm", tip: "從正面慢慢靠近" },
+    { w: "e", t: "嗯？", e: "s.confused", fx: "q" },
+    { w: "c", t: "{稱}，{自介}，我來陪你喔。", c: "crouch_talk", x: 0.64, tip: "先叫名字、再自我介紹" },
+    { w: "e", t: "喔，好啊。", e: "s.calm" },
+    { w: "c", t: "我坐你旁邊好不好？", c: "stool_chat", x: 0.63, tip: "蹲低、眼睛同高" },
+    { w: "e", t: "好啊，你坐。", e: "s.talk" },
+    { w: "c", t: "{稱}今天這件衣服好好看喔。", c: "stool_chat", tip: "微笑、語速放慢" },
+    { w: "e", t: "這件喔，穿很多年了啦！", e: "s.talk", fx: "heart" }
+  ]
+},
+{
+  id: "noquiz", cat: "basic", title: "不要考記憶", bg: "bg_dining", mode: "sit", minutes: 1,
+  sub: "中午剛吃過飯，你想確認長輩記不記得吃了什麼。",
+  think: "「你記得嗎？」這句話，對記憶不好的人來說是關心，還是考試？",
+  why: ["近期記憶最先受影響，問「記不記得」等於一直讓他考不及格。", "答不出來會焦慮、生氣，或乾脆亂編（虛談），不是故意說謊。", "把問句換成「告訴他」，他就能放心參與。"],
+  tips: [
+    { t: "把問句改成直述句", d: "不問「你記得嗎」，直接說「我們剛剛吃了魚」。" },
+    { t: "給線索、不給考題", d: "提到人名時順便說關係：「你的孫子小安」。" },
+    { t: "聊感受，不聊細節", d: "「那個魚很香齁」比「吃了什麼」好回答。" }
+  ],
+  say: ["我們剛剛吃了虱目魚粥，很好吃齁。", "這是你孫子小安，上禮拜有來看你。"],
+  avoid: ["你記得剛剛吃什麼嗎？", "我昨天才講過，你又忘了？", "這是誰？你說說看。"],
+  fam: "「我昨天才講過」是最常見的地雷。他不是不在乎，是真的沒存進去。",
+  wk: "交班時不要在長輩面前考他「早餐吃什麼」，直接問家屬或看紀錄。",
+  bad: [
+    { w: "c", t: "{稱}，你記得剛剛中午吃什麼嗎？", c: "talk", x: 0.74, e: "s.calm" },
+    { w: "e", t: "中午……有吃嗎？", e: "s.confused", fx: "q" },
+    { w: "c", t: "才剛吃完耶！你又忘記了喔？", c: "point" },
+    { w: "e", t: "我哪有忘記！你不要亂講！", e: "s.angry", fx: "anger" }
+  ],
+  good: [
+    { w: "c", t: "{稱}，我們剛剛吃虱目魚粥，好香喔。", c: "stool_chat", x: 0.64, e: "s.calm", tip: "把問句改成直述句" },
+    { w: "e", t: "對啊，魚粥。", e: "s.talk" },
+    { w: "c", t: "你以前也很會煮魚湯齁？", c: "stool_chat", tip: "聊感受，不聊細節" },
+    { w: "e", t: "我煮的魚湯，大家都說讚！", e: "s.talk", fx: "spark" },
+    { w: "c", t: "{R:我小時候最愛喝了。|聽起來好厲害喔。}", c: "crouch_listen" },
+    { w: "e", t: "要放薑絲，還要一點點米酒。", e: "s.talk", fx: "heart" },
+    { w: "c", t: "薑絲加米酒，下次教我好不好？", c: "stool_chat", tip: "給線索、不給考題" },
+    { w: "e", t: "好啊，我教你。", e: "s.calm", fx: "heart" }
+  ]
+},
+{
+  id: "onestep", cat: "basic", title: "一次只說一件事", bg: "bg_bedroom", mode: "stand", minutes: 1,
+  sub: "早上要準備出門，要換衣服、刷牙、拿外套。",
+  think: "一口氣聽到四個指令，你能全部記住並照順序做嗎？",
+  why: ["失智長輩的「工作記憶」變小，長句子聽到後面就忘了前面。", "步驟太多會手足無措，看起來像「不配合」。", "一次一個步驟、做完再說下一個，成功率最高。"],
+  tips: [
+    { t: "短句、一次一個動作", d: "「先穿這隻袖子」，做完再說下一步。" },
+    { t: "配合手勢示範", d: "邊說邊比，或把東西遞到他手上。" },
+    { t: "每完成一步就肯定", d: "「很好喔！」讓他有成功感。" }
+  ],
+  say: ["{稱}，來，手伸進這邊。", "很好！換另一隻手。"],
+  avoid: ["快點換衣服、刷牙、拿外套，我們要出門了！", "我剛剛不是說了嗎？"],
+  fam: "趕時間時更要拆步驟。提早半小時準備，比催促有效。",
+  wk: "服務時間有限，可以先把衣服按照穿的順序疊好，一件一件遞。",
+  bad: [
+    { w: "c", t: "{稱}快點，去換衣服、刷牙、拿外套，車子要來了！", c: "hips", x: 0.74, e: "calm" },
+    { w: "e", t: "啊？要先做什麼？", e: "confused", fx: "q" },
+    { w: "c", t: "我剛剛不是講了嗎？", c: "sigh" },
+    { w: "e", t: "你講那麼快，我哪知道啦！", e: "anxious", fx: "sweat" }
+  ],
+  good: [
+    { w: "c", t: "{稱}，我們來穿外套。", c: "talk", x: 0.66, e: "calm", tip: "短句、一次一個動作" },
+    { w: "e", t: "好。", e: "calm" },
+    { w: "c", t: "來，這隻手伸進來。", c: "offer", prop: "sweater", tip: "配合手勢示範" },
+    { w: "e", t: "這樣喔？", e: "confused" },
+    { w: "c", t: "對！很好喔！", c: "talk", tip: "每完成一步就肯定" },
+    { w: "c", t: "換另一隻手。", c: "offer" },
+    { w: "e", t: "好了！", e: "laugh", fx: "spark" },
+    { w: "c", t: "{稱}穿好了，好帥氣喔。", c: "talk", fx: "heart" }
+  ]
+},
+{
+  id: "choice", cat: "basic", title: "給二選一，不問開放題", bg: "bg_bedroom", mode: "sit", minutes: 1,
+  sub: "要幫長輩選今天穿的衣服。",
+  think: "「你要穿什麼？」和「你要穿紅的還是藍的？」哪一個比較好回答？",
+  why: ["開放式問題需要回想、比較、決定，對失智長輩負擔很大。", "完全不讓他選，又會覺得被當小孩、失去自主。", "「二選一」剛好兼顧：好回答、又保有決定權。"],
+  tips: [
+    { t: "給兩個選項", d: "拿著實物讓他看：「這件還是這件？」" },
+    { t: "選項都是可以接受的", d: "不給你不希望他選的選項。" },
+    { t: "尊重他的選擇", d: "選了就照做，讓他感覺自己作主。" }
+  ],
+  say: ["{稱}，你要穿紫色這件，還是灰色這件？", "要喝茶還是喝溫開水？"],
+  avoid: ["你今天要穿什麼？", "我幫你選好了，穿這件。"],
+  fam: "連長期習慣都可以變成選項：「要先洗臉還是先刷牙？」",
+  wk: "二選一也適合用在服務順序：「先散步還是先洗澡？」",
+  bad: [
+    { w: "c", t: "{稱}，你今天要穿什麼衣服？", c: "talk", x: 0.74, e: "s.calm" },
+    { w: "e", t: "穿……穿什麼喔……", e: "s.confused", fx: "q" },
+    { w: "c", t: "唉唷，隨便啦，我幫你拿這件。", c: "sigh" },
+    { w: "e", t: "我不要這件啦！", e: "s.push", fx: "anger" }
+  ],
+  good: [
+    { w: "c", t: "{稱}，我拿了兩件衣服。", c: "crouch_offer", x: 0.64, e: "s.calm", prop: "sweater", tip: "給兩個選項" },
+    { w: "c", t: "你要穿紫色這件，還是灰色那件？", c: "crouch_offer" },
+    { w: "e", t: "紫色的好了。", e: "s.talk" },
+    { w: "c", t: "好，就穿紫色的。", c: "crouch_talk", tip: "尊重他的選擇" },
+    { w: "e", t: "這件是我女兒買的喔。", e: "s.talk", fx: "heart" },
+    { w: "c", t: "難怪這麼好看！", c: "crouch_talk" },
+    { w: "e", t: "嘿嘿，對啊。", e: "s.calm", fx: "heart", tip: "選項都是可以接受的" }
+  ]
+},
+{
+  id: "wait", cat: "basic", title: "放慢、等待回應", bg: "bg_living", mode: "sit", minutes: 1,
+  sub: "你問了一個問題，長輩好一陣子沒有回答。",
+  think: "對方沒回答時，你通常是等一下，還是馬上再問一次、換個說法？",
+  why: ["失智長輩理解一句話、組織回答，需要比我們多好幾倍的時間。", "一直催、一直換說法，他要重新開始理解，反而更慢。", "安靜等待 10 秒左右，常常就會得到回答。"],
+  tips: [
+    { t: "說完等 10 秒", d: "心裡默數，不急著補話。" },
+    { t: "用同一句話重複", d: "沒回應就用一樣的字再說一次，不要換句話說。" },
+    { t: "表情鼓勵", d: "看著他、微笑點頭，讓他知道你在等。" }
+  ],
+  say: ["（說完，安靜等一下）", "{稱}，要喝水嗎？（等一下）要喝水嗎？"],
+  avoid: ["要不要喝水？還是要喝茶？還是牛奶？", "你有沒有聽到？"],
+  fam: "沉默不是沒在聽。給他時間，他會覺得被尊重。",
+  wk: "服務時把「等待時間」算進流程，催促最容易引發拒絕。",
+  bad: [
+    { w: "c", t: "{稱}要不要喝水？", c: "talk", x: 0.72, e: "s.calm" },
+    { w: "c", t: "還是要喝茶？還是牛奶？要不要嘛？", c: "hips" },
+    { w: "e", t: "……什麼……", e: "s.confused", fx: "q" },
+    { w: "c", t: "{稱}你有沒有在聽啦？", c: "point" },
+    { w: "e", t: "不要吵我啦！", e: "s.angry", fx: "anger" }
+  ],
+  good: [
+    { w: "c", t: "{稱}，要喝水嗎？", c: "crouch_offer", x: 0.64, e: "s.calm", prop: "water", tip: "說完等 10 秒" },
+    { w: "e", t: "……", e: "s.confused", pause: 2.6 },
+    { w: "c", t: "要喝水嗎？", c: "crouch_offer", tip: "用同一句話重複" },
+    { w: "e", t: "……好，喝一點。", e: "s.talk", pause: 0.8 },
+    { w: "c", t: "好，慢慢喝。", c: "crouch_talk", tip: "表情鼓勵" },
+    { w: "e", t: "嗯，溫溫的，剛好。", e: "s.calm", fx: "heart" }
+  ]
+},
+{
+  id: "noargue", cat: "basic", title: "不爭辯、不糾正", bg: "bg_living", mode: "sit", minutes: 1,
+  sub: "長輩說：「我等一下要去學校接女兒放學。」但女兒已經五十歲了。",
+  think: "如果你很確定一件事，別人一直說你錯了，你會被說服，還是更生氣？",
+  why: ["失智長輩活在他記得的時間裡，對他來說那就是真的。", "糾正事實無法讓他「想起來」，只會讓他覺得被否定、被當傻瓜。", "先接住話題背後的感受（擔心、責任感），再慢慢轉移。"],
+  tips: [
+    { t: "不爭對錯", d: "不說「你錯了」「她早就長大了」。" },
+    { t: "回應背後的感受", d: "「你很疼女兒齁」接住他的擔心。" },
+    { t: "順著話題聊", d: "請他說說女兒小時候。" },
+    { t: "再轉移注意力", d: "聊開心了，再帶到下一件事。" }
+  ],
+  say: ["你很疼女兒齁，她小時候是什麼樣子？", "放學還有一點時間，我們先喝杯茶。"],
+  avoid: ["你女兒五十歲了啦，不用接了！", "你又搞錯了！"],
+  fam: "被當成小時候的自己，心裡會酸。可以先深呼吸，記得他是在表達愛。",
+  wk: "不確定的事不要編太複雜的謊，用「先…再…」延後就好。",
+  bad: [
+    { w: "e", t: "我等一下要去學校接女兒放學。", e: "s.talk" , c: "calm", x: 0.74 },
+    { w: "c", t: "{稱}，你女兒五十歲了啦！不用接了！", c: "point" },
+    { w: "e", t: "亂講！她才讀小學！", e: "s.angry", fx: "anger" },
+    { w: "c", t: "你又搞錯了啦！", c: "hips" },
+    { w: "e", t: "你們都騙我！", e: "s.sad", fx: "tear" }
+  ],
+  good: [
+    { w: "e", t: "我等一下要去學校接女兒放學。", e: "s.talk", c: "stool_chat", x: 0.64 },
+    { w: "c", t: "你很疼女兒齁。", c: "stool_chat", tip: "回應背後的感受" },
+    { w: "e", t: "當然啊，她很乖。", e: "s.talk", fx: "heart" },
+    { w: "c", t: "她小時候是什麼樣子？", c: "stool_chat", tip: "順著話題聊" },
+    { w: "e", t: "綁兩個辮子，每天都跑第一個衝出來。", e: "s.talk", fx: "heart" },
+    { w: "c", t: "好可愛喔！放學還有一點時間，我們先喝杯茶。", c: "crouch_offer", prop: "tea", tip: "再轉移注意力" },
+    { w: "e", t: "好啊，喝茶。", e: "s.calm", fx: "heart", tip: "不爭對錯" }
+  ]
+},
+{
+  id: "role", cat: "basic", title: "給他一個角色", bg: "bg_living", mode: "sit", minutes: 1,
+  sub: "長輩整天坐著發呆，說：「我什麼都不會了，沒有用了。」",
+  think: "被照顧的人，是不是也需要感覺自己「還能幫上忙」？",
+  why: ["被全部代勞，會失去自信、變得更退縮。", "熟悉的家事（摺衣服、挑菜）是保留下來的能力。", "被需要、被感謝，是最好的情緒穩定劑。"],
+  tips: [
+    { t: "請他幫忙", d: "用「拜託你」「幫我一下」開頭。" },
+    { t: "選他擅長的事", d: "摺衣服、剝豆子、擦桌子都很好。" },
+    { t: "不在意做得完美", d: "摺歪了也沒關係，重點是參與。" },
+    { t: "具體道謝", d: "「有你幫忙，快好多」。" }
+  ],
+  say: ["{稱}，可以幫我一個忙嗎？這些毛巾我摺不好。", "有你幫忙，快好多，謝謝你！"],
+  avoid: ["你坐著就好，什麼都不用做。", "算了算了，我來就好。"],
+  fam: "「我來就好」很體貼，但會讓長輩更快失去能力。",
+  wk: "居家復能的精神：陪他做，而不是替他做。",
+  bad: [
+    { w: "e", t: "唉，我什麼都不會了，沒有用了。", e: "s.sad", c: "calm", x: 0.74 },
+    { w: "c", t: "你坐著就好啦，什麼都不用做。", c: "talk" },
+    { w: "e", t: "對啦……我就是沒用。", e: "s.sad", fx: "tear" }
+  ],
+  good: [
+    { w: "e", t: "唉，我什麼都不會了，沒有用了。", e: "s.sad", c: "crouch_listen", x: 0.64 },
+    { w: "c", t: "{稱}，可以幫我一個忙嗎？", c: "crouch_talk", tip: "請他幫忙" },
+    { w: "c", t: "這些毛巾我一直摺不好。", c: "crouch_offer", prop: "towel", tip: "選他擅長的事" },
+    { w: "e", t: "這個很簡單啦，我教你。", e: "s.talk", fx: "spark" },
+    { w: "e", t: "對摺，再對摺，這樣就好了。", e: "s.talk" },
+    { w: "c", t: "哇，摺得好整齊！", c: "crouch_talk", tip: "不在意做得完美" },
+    { w: "c", t: "有你幫忙，快好多，謝謝你！", c: "crouch_talk", tip: "具體道謝" },
+    { w: "e", t: "以後還有，就拿來給我摺。", e: "s.calm", fx: "heart" }
+  ]
+},
+{
+  id: "show", cat: "basic", title: "聽不懂時，用動作示範", bg: "bg_bath", mode: "stand", minutes: 1,
+  sub: "請長輩洗手，他站在洗手台前不知道要做什麼。",
+  think: "如果你到一個語言不通的國家，別人怎麼「說」你最容易懂？",
+  why: ["語言理解退化時，「看」比「聽」容易懂。", "示範動作會喚起身體的程序記憶（洗手、梳頭）。", "邊做邊說，給他看、給他摸，常常就接得下去。"],
+  tips: [
+    { t: "少說話、多示範", d: "自己先做一次給他看。" },
+    { t: "把東西放到他手上", d: "毛巾、肥皂直接遞到手裡。" },
+    { t: "用關鍵字", d: "「洗手」「搓搓」比長句子好懂。" }
+  ],
+  say: ["{稱}，洗手。（自己做搓手動作）", "搓搓搓，很好。"],
+  avoid: ["把手放到水龍頭下面、打開、按肥皂、搓二十秒……", "這麼簡單也不會喔？"],
+  fam: "做不到不代表不想做，可能只是卡在「開始」那一步。",
+  wk: "可以用「手牽手一起做」的方式帶出第一個動作。",
+  bad: [
+    { w: "c", t: "{稱}，你先把手放到水龍頭下面，打開，按肥皂，然後搓二十秒。", c: "talk", x: 0.74, e: "calm" },
+    { w: "e", t: "……", e: "confused", fx: "q", pause: 1 },
+    { w: "c", t: "這麼簡單也不會喔？", c: "hips" },
+    { w: "e", t: "你很兇耶！", e: "angry", fx: "anger" }
+  ],
+  good: [
+    { w: "c", t: "{稱}，洗手。", c: "talk", x: 0.66, e: "calm", tip: "用關鍵字" },
+    { w: "e", t: "洗手？", e: "confused", fx: "q" },
+    { w: "c", t: "像這樣，搓搓搓。", c: "offer", tip: "少說話、多示範" },
+    { w: "e", t: "喔，搓搓搓。", e: "calm" },
+    { w: "c", t: "很好！來，毛巾給你。", c: "offer", prop: "towel", tip: "把東西放到他手上" },
+    { w: "e", t: "洗乾淨了。", e: "laugh", fx: "spark" }
+  ]
+},
+{
+  id: "repeat", cat: "bpsd", title: "一直重複問同一件事", bg: "bg_living", mode: "sit", minutes: 1,
+  sub: "長輩十分鐘內問了五次：「今天禮拜幾？」",
+  think: "一直問同一件事，背後可能是什麼心情？",
+  why: ["剛剛的答案沒有被記住，對他來說每次都是第一次問。", "重複發問常常是因為不安：怕錯過什麼、怕被丟下。", "回答時語氣一樣溫和，再加上「看得到」的提示，最有效。"],
+  tips: [
+    { t: "每次都當第一次回答", d: "語氣一樣，不說「我講過了」。" },
+    { t: "找出背後的擔心", d: "問禮拜幾，可能是怕錯過看醫生。" },
+    { t: "用看得到的提示", d: "大字月曆、白板寫今天行程。" },
+    { t: "轉移到活動", d: "一起做點事，不安就會下降。" }
+  ],
+  say: ["今天禮拜三喔。你看，白板上有寫。", "你是不是擔心要去看醫生？醫生是禮拜五，我會陪你去。"],
+  avoid: ["我已經講第五次了！", "你自己看月曆啦。"],
+  fam: "可以準備一個大白板，寫「今天星期幾、誰會來、要做什麼」。",
+  wk: "把每天的行程寫在固定位置，下次來也用同一個位置。",
+  bad: [
+    { w: "e", t: "今天禮拜幾？", e: "s.confused", c: "calm", x: 0.74, fx: "q" },
+    { w: "c", t: "{稱}，我已經講第五次了，禮拜三啦！", c: "hips" },
+    { w: "e", t: "你什麼時候講的？", e: "s.angry", fx: "anger" },
+    { w: "c", t: "唉……", c: "sigh" },
+    { w: "e", t: "問一下也不行喔……", e: "s.sad", fx: "tear" }
+  ],
+  good: [
+    { w: "e", t: "今天禮拜幾？", e: "s.confused", c: "stool_chat", x: 0.64, fx: "q" },
+    { w: "c", t: "今天禮拜三喔。", c: "stool_chat", tip: "每次都當第一次回答" },
+    { w: "e", t: "禮拜三……要去看醫生嗎？", e: "s.confused" },
+    { w: "c", t: "你是不是擔心看醫生的事？", c: "crouch_listen", tip: "找出背後的擔心" },
+    { w: "e", t: "對啊，怕忘記。", e: "s.sad" },
+    { w: "c", t: "醫生是禮拜五，我寫在白板上，到時候我陪你去。", c: "stool_point", tip: "用看得到的提示" },
+    { w: "e", t: "喔，有寫就好。", e: "s.calm" },
+    { w: "c", t: "來，我們一起聽收音機。", c: "crouch_offer", prop: "radio", tip: "轉移到活動" },
+    { w: "e", t: "好啊！", e: "s.talk", fx: "music" }
+  ]
+},
+{
+  id: "stolen", cat: "bpsd", title: "說東西被偷了", bg: "bg_bedroom", mode: "stand", minutes: 1,
+  sub: "長輩找不到錢包，生氣地說：「一定是有人偷走了！」",
+  think: "被懷疑是小偷時，你的第一反應是什麼？那個反應對長輩有幫助嗎？",
+  why: ["自己把東西收起來卻忘了，大腦只好找一個「合理」解釋：被偷了。", "這是疾病造成的妄想，不是針對你。", "急著證明清白會吵起來；先陪他「一起找」，焦點就回到東西上。"],
+  tips: [
+    { t: "不急著否認", d: "先不說「我沒拿」，先回應他的著急。" },
+    { t: "認同感受", d: "「錢包不見一定很著急」。" },
+    { t: "一起找", d: "陪他找，讓他自己找到最好。" },
+    { t: "記住常藏的地方", d: "枕頭下、衣櫃深處、舊鞋盒。" }
+  ],
+  say: ["錢包不見，一定很著急齁，我陪你一起找。", "你找到了！太好了！"],
+  avoid: ["我才沒有拿！", "你自己亂放還怪別人！"],
+  fam: "準備一個一樣的備用錢包，放少量零錢，找不到時能先安心。",
+  wk: "居服員最常被懷疑。陪找時讓長輩自己拿出物品，並跟家屬、督導回報紀錄。",
+  bad: [
+    { w: "e", t: "我的錢包不見了！一定是你偷的！", e: "angry", c: "calm", x: 0.74, fx: "anger" },
+    { w: "c", t: "我才沒有拿！你自己亂放還怪人！", c: "point" },
+    { w: "e", t: "就是你！我要報警！", e: "angry", fx: "anger" },
+    { w: "c", t: "{R:你真的很誇張耶！|我不做了啦！}", c: "hips" }
+  ],
+  good: [
+    { w: "e", t: "我的錢包不見了！一定是有人偷走了！", e: "angry", c: "listen", x: 0.68, fx: "anger" },
+    { w: "c", t: "錢包不見了，一定很著急齁。", c: "listen", tip: "認同感受" },
+    { w: "e", t: "對啊！裡面有錢耶！", e: "anxious", fx: "sweat" },
+    { w: "c", t: "我陪你一起找，好不好？", c: "talk", tip: "一起找" },
+    { w: "e", t: "好……", e: "anxious" },
+    { w: "c", t: "你平常喜歡放哪裡？我們看看枕頭底下。", c: "point", tip: "記住常藏的地方" },
+    { w: "e", t: "啊！在這裡！", e: "laugh", prop: "wallet", fx: "spark" },
+    { w: "c", t: "太好了，找到了！", c: "talk", tip: "不急著否認" },
+    { w: "e", t: "嘿嘿，原來我放在這裡。", e: "calm", fx: "heart" }
+  ]
+},
+{
+  id: "gohome", cat: "bpsd", title: "在家裡吵著要回家", bg: "bg_door", mode: "stand", minutes: 1,
+  sub: "長輩站在門口拿著包包：「我要回家，我媽在等我。」可是這裡就是他家。",
+  think: "長輩說的「家」，可能不是一個地址，而是什麼？",
+  why: ["「家」常常代表安全感、熟悉感，或是小時候的家。", "說「這裡就是你家」，他看到的卻是陌生的地方，會更慌。", "先接住「想回家」的心情，聊聊那個家，再一起做別的事。"],
+  tips: [
+    { t: "問問那個家", d: "「你家在哪裡？家裡有誰？」" },
+    { t: "回應想家的心情", d: "「你很想媽媽齁」。" },
+    { t: "陪他走一走", d: "一起出去繞一圈再回來，比擋在門口好。" },
+    { t: "再轉移到點心或活動", d: "走累了，回來喝杯茶。" }
+  ],
+  say: ["你家在哪裡？家裡有誰？", "我陪你走一段，走累了我們回來喝茶。"],
+  avoid: ["這裡就是你家啦！", "你媽早就過世了！", "（把門鎖起來不理他）"],
+  fam: "傍晚最常出現。可以準備他喜歡的點心、音樂，讓「回家」的念頭有地方放。",
+  wk: "若長輩堅持外出，以安全為先陪同、通知家屬，不要硬拉。",
+  bad: [
+    { w: "e", t: "我要回家，我媽在等我。", e: "leave", c: "calm", x: 0.74 },
+    { w: "c", t: "{稱}，這裡就是你家啦！", c: "point" },
+    { w: "e", t: "這哪是我家！你讓開！", e: "angry", fx: "anger" },
+    { w: "c", t: "你不能出去！", c: "hips" },
+    { w: "e", t: "放我出去！", e: "anxious", fx: "sweat" }
+  ],
+  good: [
+    { w: "e", t: "我要回家，我媽在等我。", e: "leave", c: "listen", x: 0.7 },
+    { w: "c", t: "你很想媽媽齁。", c: "listen", tip: "回應想家的心情" },
+    { w: "e", t: "對啊，她煮好飯在等我。", e: "anxious" },
+    { w: "c", t: "你家在哪裡？媽媽都煮什麼？", c: "talk", tip: "問問那個家" },
+    { w: "e", t: "在{A:員林|北港}，她最會煮滷肉。", e: "calm" },
+    { w: "c", t: "聽起來好好吃。我陪你走一段好不好？", c: "walk", tip: "陪他走一走" },
+    { w: "e", t: "好啊，你陪我。", e: "calm" },
+    { w: "c", t: "走累了，我們回來喝杯茶，你再說滷肉怎麼煮。", c: "offer", prop: "tea", tip: "再轉移到點心或活動" },
+    { w: "e", t: "好啊，我跟你講。", e: "laugh", fx: "heart" }
+  ]
+},
+{
+  id: "sundown", cat: "bpsd", title: "黃昏時特別焦躁", bg: "bg_evening", mode: "stand", minutes: 1,
+  sub: "每天傍晚四、五點，長輩就開始走來走去、坐立不安。",
+  think: "天色變暗、家裡忙著煮飯、電視很吵——這時候你的心情會怎樣？",
+  why: ["黃昏光線變暗、影子變多，容易看錯、害怕。", "一天下來累了，身體不舒服、肚子餓、想上廁所都會讓人焦躁。", "這叫「日落症候群」，調整環境和節奏比說理有效。"],
+  tips: [
+    { t: "提早開燈", d: "天黑前就把燈打亮，減少陰影。" },
+    { t: "檢查身體需求", d: "餓了嗎？渴了嗎？要上廁所嗎？" },
+    { t: "降低刺激", d: "關小電視、少一點人說話。" },
+    { t: "安排安靜的活動", d: "聽老歌、摺衣服、喝溫熱的茶。" }
+  ],
+  say: ["{稱}，我開燈，亮亮的比較舒服。", "你是不是想上廁所？我陪你去。"],
+  avoid: ["你又在亂走什麼？坐好！", "天天都這樣，煩死了。"],
+  fam: "把這段時間空下來陪他，或白天多曬太陽、少睡午覺，晚上會比較穩。",
+  wk: "若服務時段在傍晚，記錄焦躁的時間和原因，給家屬參考。",
+  bad: [
+    { w: "e", t: "我要走了，我要走了……", e: "anxious", c: "calm", x: 0.74, fx: "sweat" },
+    { w: "c", t: "{稱}你又在亂走什麼？坐好啦！", c: "point" },
+    { w: "e", t: "不要管我！", e: "angry", fx: "anger" },
+    { w: "c", t: "天天都這樣……", c: "sigh" }
+  ],
+  good: [
+    { w: "e", t: "我要走了，我要走了……", e: "anxious", c: "listen", x: 0.68, fx: "sweat" },
+    { w: "c", t: "{稱}，天暗了，我先把燈打開，亮亮的比較舒服。", c: "talk", tip: "提早開燈", fx: "light" },
+    { w: "e", t: "嗯……", e: "calm" },
+    { w: "c", t: "你是不是想上廁所，還是肚子餓了？", c: "listen", tip: "檢查身體需求" },
+    { w: "e", t: "有一點餓。", e: "calm" },
+    { w: "c", t: "我們把電視關小聲一點，吃個小餅乾、喝杯熱茶。", c: "offer", prop: "tea", tip: "降低刺激" },
+    { w: "e", t: "好，喝熱茶。", e: "calm", fx: "heart" },
+    { w: "c", t: "邊喝邊聽鄧麗君好不好？", c: "talk", tip: "安排安靜的活動", fx: "music" },
+    { w: "e", t: "好啊，我最喜歡了。", e: "laugh", fx: "music" }
+  ]
+}
+);
+
+// 情境資料（下）行為與精神症狀＋日常照顧
+SCENARIOS.push(
+{
+  id: "parent", cat: "bpsd", title: "要找已經過世的媽媽", bg: "bg_living", mode: "sit", minutes: 1,
+  sub: "長輩一直問：「我媽媽呢？她怎麼還沒回來？」",
+  think: "要不要告訴他「媽媽已經過世了」？說了之後會發生什麼事？",
+  why: ["對他來說，失去媽媽的事已經不記得了，每次告知都是第一次聽到噩耗。", "反覆經歷喪親之痛，對長輩很殘忍。", "找媽媽，常常是在找安全感與被照顧的感覺。"],
+  tips: [
+    { t: "不重複告知噩耗", d: "不說「她早就死了」。" },
+    { t: "請他說說媽媽", d: "「你媽媽是什麼樣的人？」" },
+    { t: "接住思念", d: "「你很想她齁，她一定很疼你」。" },
+    { t: "用照片或老歌陪伴", d: "看看老相簿，讓回憶變成安慰。" }
+  ],
+  say: ["你很想媽媽齁，你媽媽是什麼樣的人？", "我們來看看以前的照片。"],
+  avoid: ["你媽媽已經過世三十年了啦！", "你都幾歲了還找媽媽？"],
+  fam: "說謊會不安嗎？我們不是騙他，是選擇陪他留在有媽媽的回憶裡。",
+  wk: "可以先問家屬：長輩的媽媽叫什麼、以前做什麼，聊起來更自然。",
+  bad: [
+    { w: "e", t: "我媽媽呢？她怎麼還沒回來？", e: "s.anxious", c: "calm", x: 0.74, fx: "q" },
+    { w: "c", t: "{稱}，你媽媽已經過世三十年了啦！", c: "talk" },
+    { w: "e", t: "什麼？我媽死了？怎麼沒人跟我說……", e: "s.sad", fx: "tear" },
+    { w: "e", t: "嗚……", e: "s.sad", fx: "tear" }
+  ],
+  good: [
+    { w: "e", t: "我媽媽呢？她怎麼還沒回來？", e: "s.confused", c: "stool_chat", x: 0.64, fx: "q" },
+    { w: "c", t: "你很想媽媽齁。", c: "crouch_listen", tip: "接住思念" },
+    { w: "e", t: "對啊……", e: "s.sad" },
+    { w: "c", t: "你媽媽是什麼樣的人？", c: "stool_chat", tip: "請他說說媽媽" },
+    { w: "e", t: "她很勤勞，每天天沒亮就起來煮飯。", e: "s.talk" },
+    { w: "c", t: "她一定很疼你。我們來看看以前的照片好不好？", c: "crouch_offer", prop: "album", tip: "用照片或老歌陪伴" },
+    { w: "e", t: "你看，這就是我媽媽。", e: "s.album", fx: "heart" },
+    { w: "c", t: "好漂亮，你們長得好像喔。", c: "stool_point", tip: "不重複告知噩耗" },
+    { w: "e", t: "大家都這樣說。", e: "s.album", fx: "heart" }
+  ]
+},
+{
+  id: "halluc", cat: "bpsd", title: "看到不存在的人", bg: "bg_evening", mode: "stand", minutes: 1,
+  sub: "長輩指著窗邊說：「那邊有一個人一直看我！」可是那裡沒有人。",
+  think: "如果你真的看到有人站在那裡，別人卻說「哪有」，你會怎麼想？",
+  why: ["幻覺對長輩來說是真實的，不是在說謊或裝瘋。", "光線、陰影、鏡子、掛著的衣服都可能被看錯。", "不要爭辯「有沒有」，也不要附和加油添醋；先處理他的害怕。"],
+  tips: [
+    { t: "先處理害怕", d: "「你嚇到了齁，我在這裡」。" },
+    { t: "不爭有沒有", d: "不說「哪有人，你看錯了」。" },
+    { t: "檢查環境", d: "開燈、拉窗簾、移開衣服或鏡子。" },
+    { t: "換個地方", d: "陪他到亮一點的地方坐。" }
+  ],
+  say: ["你嚇到了齁，別怕，我在這裡。", "我把燈打開、窗簾拉起來，我們去客廳坐。"],
+  avoid: ["哪有人？你看錯了啦！", "對啊，有鬼喔。"],
+  fam: "幻覺突然出現、變多，或讓他非常害怕時，要回診告訴醫師。",
+  wk: "記錄出現的時間、地點、內容，回報家屬與個管師。",
+  bad: [
+    { w: "e", t: "那邊有一個人一直看我！", e: "anxious", c: "calm", x: 0.74, fx: "sweat" },
+    { w: "c", t: "哪有人？你看錯了啦！", c: "point" },
+    { w: "e", t: "明明就有！你為什麼不相信我！", e: "angry", fx: "anger" },
+    { w: "c", t: "唉，又來了。", c: "sigh" }
+  ],
+  good: [
+    { w: "e", t: "那邊有一個人一直看我！", e: "anxious", c: "listen", x: 0.68, fx: "sweat" },
+    { w: "c", t: "你嚇到了齁，別怕，我在這裡。", c: "listen", tip: "先處理害怕" },
+    { w: "e", t: "他是誰啦……", e: "anxious" },
+    { w: "c", t: "我去看看，順便把燈打開、窗簾拉起來。", c: "walk", tip: "檢查環境", fx: "light" },
+    { w: "c", t: "這樣就看不到了。我們去客廳亮一點的地方坐。", c: "talk", tip: "換個地方" },
+    { w: "e", t: "好，跟你一起。", e: "calm" },
+    { w: "c", t: "有我陪你，放心。", c: "talk", tip: "不爭有沒有", fx: "heart" }
+  ]
+},
+{
+  id: "poison", cat: "bpsd", title: "懷疑飯菜有毒、有人要害他", bg: "bg_dining", mode: "sit", minutes: 1,
+  sub: "長輩把碗推開：「這飯有毒，你們想害我！」",
+  think: "長輩說「有毒」，最需要的是你證明清白，還是讓他覺得安全？",
+  why: ["被害妄想是疾病症狀，常伴隨不安與失控感。", "味覺、嗅覺改變，也會讓食物「怪怪的」。", "爭論只會讓他更確定你有問題；示範、陪伴、給選擇比較有用。"],
+  tips: [
+    { t: "不生氣、不辯解", d: "先說「你擔心安全，我懂」。" },
+    { t: "當面示範", d: "從同一鍋盛一口自己先吃。" },
+    { t: "讓他參與", d: "請他自己挑碗、自己盛菜。" },
+    { t: "觀察與就醫", d: "持續拒食或體重下降要找醫師。" }
+  ],
+  say: ["你擔心不安全，我懂。我先吃一口給你看。", "你自己挑一個碗，好不好？"],
+  avoid: ["我煮這麼辛苦你還說有毒！", "不吃就算了！"],
+  fam: "被至親懷疑最傷心。記得那是病，不是他真心的想法。",
+  wk: "被懷疑時保持冷靜，回報家屬與督導，必要時調整由家屬準備食物。",
+  bad: [
+    { w: "e", t: "這飯有毒！你們想害我！", e: "s.push", c: "calm", x: 0.74, fx: "anger" },
+    { w: "c", t: "我煮這麼辛苦，你還說有毒！", c: "hips" },
+    { w: "e", t: "就是有毒！我不吃！", e: "s.angry", fx: "anger" },
+    { w: "c", t: "不吃就算了！", c: "point" }
+  ],
+  good: [
+    { w: "e", t: "這飯有毒！你們想害我！", e: "s.push", c: "crouch_listen", x: 0.64, fx: "anger" },
+    { w: "c", t: "你擔心不安全，我懂。", c: "crouch_listen", tip: "不生氣、不辯解" },
+    { w: "c", t: "我從同一鍋盛一口，先吃給你看。", c: "crouch_offer", prop: "rice", tip: "當面示範" },
+    { w: "e", t: "……你吃吃看。", e: "s.confused" },
+    { w: "c", t: "嗯，很香喔。你自己挑一個碗好不好？", c: "crouch_talk", tip: "讓他參與" },
+    { w: "e", t: "我要這個藍色的。", e: "s.talk" },
+    { w: "c", t: "好，你自己盛，想吃多少就盛多少。", c: "crouch_talk" },
+    { w: "e", t: "這樣才放心。", e: "s.eat", tip: "觀察與就醫" }
+  ]
+},
+{
+  id: "bath", cat: "bpsd", title: "拒絕洗澡", bg: "bg_bath", mode: "stand", minutes: 1,
+  sub: "已經三天沒洗澡了，一提到洗澡長輩就說：「我洗過了！」",
+  think: "在別人面前脫光、水又太冷或太熱，你會不會也想拒絕？",
+  why: ["洗澡要脫衣服，會覺得害羞、沒有隱私。", "怕冷、怕滑倒、怕水聲，或不知道洗澡要做什麼。", "說「我洗過了」常是自尊，不是故意騙人。"],
+  tips: [
+    { t: "不說「洗澡」兩個字", d: "可以說「泡泡腳」「擦擦身體，等一下要出門」。" },
+    { t: "先準備好環境", d: "浴室先開暖、水溫調好、毛巾備齊。" },
+    { t: "保護隱私", d: "用大浴巾蓋著，洗哪裡才露哪裡。" },
+    { t: "讓他自己做能做的", d: "遞毛巾讓他自己擦臉、擦手。" },
+    { t: "不行就換時間", d: "今天不洗，明天再試，不要硬來。" }
+  ],
+  say: ["{稱}，浴室暖暖的，我們先泡泡腳。", "這條大毛巾蓋著，不會冷也不會被看到。"],
+  avoid: ["你三天沒洗了，臭死了！", "不洗不行！（直接拉進浴室）"],
+  fam: "找出他以前的習慣：早上還是晚上洗？淋浴還是泡澡？照舊來比較順。",
+  wk: "同性別服務會讓長輩比較自在；被拒絕時記錄並換時間，不強迫。",
+  bad: [
+    { w: "c", t: "{稱}，你三天沒洗澡了，今天一定要洗！", c: "point", x: 0.74, e: "calm" },
+    { w: "e", t: "我洗過了！", e: "refuse", fx: "anger" },
+    { w: "c", t: "哪有！都臭臭的了！快點脫衣服！", c: "hips" },
+    { w: "e", t: "我不要！你走開！", e: "angry", fx: "anger" }
+  ],
+  good: [
+    { w: "c", t: "{稱}，下午要去公園，我們先泡泡腳好不好？", c: "talk", x: 0.68, e: "calm", tip: "不說「洗澡」兩個字" },
+    { w: "e", t: "泡腳喔……", e: "confused" },
+    { w: "c", t: "浴室我先開暖了，水溫也調好了，你摸摸看。", c: "offer", tip: "先準備好環境" },
+    { w: "e", t: "嗯，溫溫的。", e: "calm" },
+    { w: "c", t: "這條大毛巾蓋著，不會冷也不會被看到。", c: "offer", prop: "towel", tip: "保護隱私" },
+    { w: "e", t: "好啦，泡一下。", e: "calm" },
+    { w: "c", t: "毛巾給你，臉你自己擦，你最會了。", c: "offer", tip: "讓他自己做能做的" },
+    { w: "e", t: "這樣很舒服捏。", e: "laugh", fx: "heart", tip: "不行就換時間" }
+  ]
+},
+{
+  id: "meds", cat: "bpsd", title: "拒絕吃藥", bg: "bg_dining", mode: "sit", minutes: 1,
+  sub: "長輩看著藥說：「我又沒生病，吃什麼藥！」",
+  think: "如果你覺得自己好好的，別人一直叫你吃藥，你會怎麼想？",
+  why: ["失智長輩常常不覺得自己生病（病識感下降）。", "藥太多、太大顆、太苦，或吞嚥困難，也會拒吃。", "爭論「你有病」會傷自尊；換個說法、換個時間常有效。"],
+  tips: [
+    { t: "用他在乎的理由", d: "「醫生說這個顧心臟，吃了比較有力氣」。" },
+    { t: "一次一顆、配溫水", d: "不要一次一把，先吞一顆就好。" },
+    { t: "被拒絕就晚點再試", d: "隔 15～30 分鐘、換個人，再試一次。" },
+    { t: "跟醫師藥師討論", d: "可否改劑型、減少顆數；不要自行把藥藏進食物。" }
+  ],
+  say: ["{稱}，這是顧心臟的，吃了比較有力氣去散步。", "先吃這一顆就好，配溫溫的水。"],
+  avoid: ["你有病，一定要吃！", "不吃的話我就不管你了。"],
+  fam: "準備藥盒、固定時間地點，變成生活習慣。拒吃情形要告訴醫師或藥師。",
+  wk: "居服員依規定協助提醒服藥；拒服要記錄並回報家屬與個管師。",
+  bad: [
+    { w: "c", t: "{稱}，吃藥了。", c: "offer", x: 0.74, e: "s.calm", prop: "pills" },
+    { w: "e", t: "我又沒生病，吃什麼藥！", e: "s.push", fx: "anger" },
+    { w: "c", t: "你有病啦！醫生說一定要吃！", c: "point" },
+    { w: "e", t: "我才沒病！拿走！", e: "s.angry", fx: "anger" }
+  ],
+  good: [
+    { w: "c", t: "{稱}，喝口溫水。", c: "crouch_offer", x: 0.64, e: "s.calm", prop: "water" },
+    { w: "e", t: "好。", e: "s.calm" },
+    { w: "c", t: "這是醫生開的顧心臟的，吃了比較有力氣去散步。", c: "crouch_offer", prop: "pills", tip: "用他在乎的理由" },
+    { w: "e", t: "我又沒生病……", e: "s.confused" },
+    { w: "c", t: "對啊，你身體很好，這個是讓你更有力氣的。先吃這一顆就好。", c: "crouch_talk", tip: "一次一顆、配溫水" },
+    { w: "e", t: "一顆喔……好啦。", e: "s.calm" },
+    { w: "c", t: "很好，吃完我們就去散步。", c: "crouch_talk", tip: "被拒絕就晚點再試" },
+    { w: "e", t: "走走走。", e: "s.talk", fx: "heart", tip: "跟醫師藥師討論" }
+  ]
+},
+{
+  id: "angry", cat: "bpsd", title: "突然生氣、罵人、想打人", bg: "bg_living", mode: "stand", minutes: 1,
+  sub: "幫長輩整理衣服時，他突然大罵，揮手想打人。",
+  think: "長輩生氣之前，可能發生了什麼你沒注意到的事？",
+  why: ["生氣常常是表達不舒服的方式：痛、累、怕、被催、聽不懂。", "被突然碰觸、身體被移動，會以為自己被攻擊。", "先保護雙方安全，等情緒下來，再找原因。"],
+  tips: [
+    { t: "先退一步，保持距離", d: "退到手打不到的距離，不要拉扯。" },
+    { t: "降低聲音、放慢", d: "不跟著大聲，語氣平穩。" },
+    { t: "說出他的感受", d: "「你不舒服齁、你生氣了」。" },
+    { t: "等一下再試", d: "暫停任務，冷靜後換個方式。" },
+    { t: "事後找原因", d: "記錄發生前的事，找出觸發點。" }
+  ],
+  say: ["好，我先停下來。", "你生氣了齁，是不是哪裡不舒服？"],
+  avoid: ["你怎麼可以打人！", "（抓住他的手、大聲喝止）"],
+  fam: "安全第一。頻繁出現或有受傷風險時，要找醫師與長照個管師討論。",
+  wk: "被攻擊時先保護自己、退開，事後通報督導；不是你的錯。",
+  bad: [
+    { w: "c", t: "{稱}，衣服拉好。", c: "offer", x: 0.62, e: "calm" },
+    { w: "e", t: "你幹什麼！不要碰我！", e: "angry", fx: "anger" },
+    { w: "c", t: "你怎麼可以這樣！手放下！", c: "point" },
+    { w: "e", t: "走開！走開！", e: "refuse", fx: "anger" }
+  ],
+  good: [
+    { w: "e", t: "你幹什麼！不要碰我！", e: "angry", c: "calm", x: 0.62, fx: "anger" },
+    { w: "c", t: "好，我先停下來。", c: "listen", x: 0.78, tip: "先退一步，保持距離" },
+    { w: "c", t: "你生氣了齁。", c: "listen", tip: "降低聲音、放慢" },
+    { w: "e", t: "你一直拉我！很痛耶！", e: "angry" },
+    { w: "c", t: "對不起，拉到你會痛。是肩膀痛嗎？", c: "listen", tip: "說出他的感受" },
+    { w: "e", t: "對啦，這邊痛。", e: "sad" },
+    { w: "c", t: "我們先休息，等一下換件好穿的衣服。", c: "talk", tip: "等一下再試" },
+    { w: "e", t: "……好。", e: "calm", tip: "事後找原因" }
+  ]
+},
+{
+  id: "night", cat: "bpsd", title: "半夜起床要出門上班", bg: "bg_night", mode: "stand", minutes: 1,
+  sub: "凌晨兩點，長輩穿好衣服說：「我要去上班了，要遲到了！」",
+  think: "長輩以前的工作，對他來說代表什麼？",
+  why: ["日夜節律亂了，白天睡太多、晚上睡不著。", "以前的工作、責任感還深深記得，「上班」代表自己有價值。", "直接否定會讓他慌；先肯定他的認真，再用時間做引導。"],
+  tips: [
+    { t: "肯定他的責任感", d: "「你做事真的很認真」。" },
+    { t: "用環境說明時間", d: "「你看外面還很暗，大家都還在睡」。" },
+    { t: "陪他回到床邊", d: "喝口溫水、上廁所，再回去躺。" },
+    { t: "白天多活動", d: "白天曬太陽、少午睡，晚上比較好睡。" }
+  ],
+  say: ["你做事真的很認真。你看外面還很暗，還沒到上班時間。", "我們先喝口溫水，再躺一下，天亮我叫你。"],
+  avoid: ["你早就退休了！上什麼班！", "半夜不要吵啦！"],
+  fam: "晚上可以在床邊放小夜燈和時鐘；大門加感應鈴，避免走失。",
+  wk: "夜間服務或交班時，記錄長輩夜醒次數，提供家屬與醫師參考。",
+  bad: [
+    { w: "e", t: "我要去上班了，要遲到了！", e: "leave", c: "calm", x: 0.74 },
+    { w: "c", t: "{稱}，你早就退休了啦！上什麼班！", c: "point" },
+    { w: "e", t: "誰說的！老闆在等我！", e: "angry", fx: "anger" },
+    { w: "c", t: "半夜不要吵啦，大家都在睡！", c: "hips" }
+  ],
+  good: [
+    { w: "e", t: "我要去上班了，要遲到了！", e: "leave", c: "listen", x: 0.7 },
+    { w: "c", t: "你做事真的很認真，從來不遲到齁。", c: "listen", tip: "肯定他的責任感" },
+    { w: "e", t: "當然啊，我在{A:紡織廠|鐵工廠}做三十年。", e: "calm" },
+    { w: "c", t: "好厲害。你看外面，天還很暗，大家都還在睡。", c: "point", tip: "用環境說明時間" },
+    { w: "e", t: "還很暗喔？", e: "confused", fx: "q" },
+    { w: "c", t: "對啊，我們先喝口溫水，再躺一下，天亮我叫你。", c: "offer", prop: "water", tip: "陪他回到床邊" },
+    { w: "e", t: "好，天亮要叫我喔。", e: "calm", fx: "zz", tip: "白天多活動" }
+  ]
+},
+{
+  id: "hoard", cat: "bpsd", title: "收集、藏東西", bg: "bg_bedroom", mode: "stand", minutes: 1,
+  sub: "衣櫃裡藏了好多衛生紙、塑膠袋和餅乾，你想把它們清掉。",
+  think: "從小經歷過物資缺乏的長輩，看到東西被丟掉，會有什麼感覺？",
+  why: ["收集東西能帶來安全感：「有存起來就不怕沒有」。", "記不得放過了，又再收一次。", "當著他的面丟掉，會讓他覺得被搶、不被尊重。"],
+  tips: [
+    { t: "不當面丟", d: "不在他面前清，不說「這些都是垃圾」。" },
+    { t: "給一個專屬的收藏箱", d: "讓他有地方放，方便你知道東西在哪。" },
+    { t: "肯定節儉", d: "「你真的很會持家」。" },
+    { t: "悄悄整理會壞的食物", d: "安全第一：過期食物要定期清。" }
+  ],
+  say: ["你真的很會持家。我們給這些東西一個專屬的箱子好不好？", "這個箱子是你的，要用再來這裡拿。"],
+  avoid: ["這些都是垃圾，全部丟掉！", "你藏這些幹什麼啦！"],
+  fam: "定期在長輩不在時檢查藏食物的地方，避免發霉、招蟲。",
+  wk: "未經家屬同意不要自行丟棄長輩物品，以免被誤會。",
+  bad: [
+    { w: "c", t: "{稱}，你藏這麼多衛生紙幹什麼？全部丟掉！", c: "point", x: 0.74, e: "calm" },
+    { w: "e", t: "不准丟！那是我的！", e: "angry", fx: "anger" },
+    { w: "c", t: "這些都是垃圾啦！", c: "hips" },
+    { w: "e", t: "你們都要搶我的東西！", e: "sad", fx: "tear" }
+  ],
+  good: [
+    { w: "c", t: "{稱}，你存了好多衛生紙喔。", c: "talk", x: 0.68, e: "calm", prop: "tissue" },
+    { w: "e", t: "對啊，有備無患。", e: "calm" },
+    { w: "c", t: "你真的很會持家。", c: "listen", tip: "肯定節儉" },
+    { w: "e", t: "以前什麼都沒有，要省啊。", e: "calm" },
+    { w: "c", t: "我們給這些東西一個專屬的箱子，放整齊，要用再來拿，好不好？", c: "offer", tip: "給一個專屬的收藏箱" },
+    { w: "e", t: "好啊，這樣比較好找。", e: "laugh", fx: "spark", tip: "不當面丟" }
+  ]
+},
+{
+  id: "notknow", cat: "bpsd", title: "不認得家人、照顧者", bg: "bg_living", mode: "sit", minutes: 1,
+  sub: "長輩看著你說：「{陌生}，你是誰？怎麼在我家？」",
+  think: "被最親的人當成陌生人時，什麼樣的回應能讓他不害怕？",
+  why: ["臉孔辨識和近期記憶退化，可能認不出現在的樣子。", "他可能把你當成更年輕時的某個人（姊姊、媽媽）。", "認不出來不代表愛不見了，情感記憶常常還在。"],
+  tips: [
+    { t: "不要逼他認", d: "不問「你不認得我了嗎」。" },
+    { t: "平靜地介紹自己", d: "說名字和關係，或說「我是來幫忙的」。" },
+    { t: "以他接受的身分相處", d: "被當成姊姊也沒關係，重點是他安心。" },
+    { t: "照顧自己的心情", d: "家屬難過是正常的，找人說說。" }
+  ],
+  say: ["{稱}，{自介}，我來陪你。", "沒關係，我是來幫忙的。"],
+  avoid: ["你連我都不認得了？", "我是誰你都忘了喔？"],
+  fam: "這一刻很痛。可以在家屬團體、失智共照中心找到支持，你不孤單。",
+  wk: "換班或新居服員第一次到府時最容易出現，先陪坐、慢慢熟悉。",
+  bad: [
+    { w: "e", t: "{陌生}，你是誰？怎麼在我家？", e: "s.confused", c: "calm", x: 0.74, fx: "q" },
+    { w: "c", t: "{R:{稱}！你連我都不認得了？|{稱}，我每個禮拜都來耶，你忘了喔？}", c: "point" },
+    { w: "e", t: "我不認識你！出去！", e: "s.push", fx: "anger" },
+    { w: "c", t: "{R:怎麼會這樣……|唉……}", c: "sigh" }
+  ],
+  good: [
+    { w: "e", t: "{陌生}，你是誰？怎麼在我家？", e: "s.confused", c: "calm", x: 0.74, fx: "q" },
+    { w: "c", t: "{稱}，{自介}，我來陪你。", c: "crouch_talk", x: 0.64, tip: "平靜地介紹自己" },
+    { w: "e", t: "喔……你長得很像我{G:阿姊|阿兄}。", e: "s.confused" },
+    { w: "c", t: "真的嗎？你{G:阿姊|阿兄}是什麼樣的人？", c: "crouch_listen", tip: "以他接受的身分相處" },
+    { w: "e", t: "很照顧我，有好吃的都留給我。", e: "s.talk", fx: "heart" },
+    { w: "c", t: "那我今天也帶了好吃的，我們一起吃。", c: "crouch_offer", prop: "tea", tip: "不要逼他認" },
+    { w: "e", t: "好啊，你人真好。", e: "s.talk", fx: "heart", tip: "照顧自己的心情" }
+  ]
+},
+{
+  id: "noeat", cat: "bpsd", title: "不吃飯、吃很少", bg: "bg_dining", mode: "sit", minutes: 1,
+  sub: "飯菜放在面前，長輩一動也不動，或吃兩口就說飽了。",
+  think: "不吃，是不想吃、不會吃，還是吃不下？",
+  why: ["可能不認得餐具、看不清楚白碗裡的白飯，或不知道要開始。", "假牙不合、口腔痛、吞嚥困難、便秘都會讓人不想吃。", "旁邊一直催、環境太吵，也會影響食慾。"],
+  tips: [
+    { t: "一起吃，做示範", d: "坐在旁邊一起吃，他會跟著做。" },
+    { t: "一次一樣菜", d: "盤子東西少一點，比較不混亂。" },
+    { t: "用對比色餐具", d: "深色碗裝白飯，比較看得清楚。" },
+    { t: "檢查口腔與吞嚥", d: "常嗆咳、體重下降，要找醫師或語言治療師。" }
+  ],
+  say: ["{稱}，我們一起吃，這個魚好香喔。", "先吃一口飯，來。"],
+  avoid: ["快點吃！飯都冷了！", "不吃就不要吃了！"],
+  fam: "記錄每天吃了多少、喝了多少水，回診時給醫師看。",
+  wk: "協助進食時先確認坐姿端正、溫度適中，嗆咳要停下來。",
+  bad: [
+    { w: "c", t: "{稱}，快點吃，飯都冷了！", c: "hips", x: 0.74, e: "s.calm" },
+    { w: "e", t: "……", e: "s.confused", fx: "q", pause: 1 },
+    { w: "c", t: "你到底要不要吃啦？", c: "point" },
+    { w: "e", t: "不吃了！", e: "s.push", fx: "anger" }
+  ],
+  good: [
+    { w: "c", t: "{稱}，我坐這裡陪你一起吃。", c: "stool_chat", x: 0.64, e: "s.calm", tip: "一起吃，做示範" },
+    { w: "c", t: "我用這個深藍色的碗幫你裝飯，看得比較清楚。", c: "crouch_offer", prop: "rice", tip: "用對比色餐具" },
+    { w: "e", t: "嗯。", e: "s.confused" },
+    { w: "c", t: "先吃一口飯，像這樣。", c: "stool_chat", tip: "一次一樣菜" },
+    { w: "e", t: "嗯，好吃。", e: "s.eat" },
+    { w: "c", t: "{稱}吃得很好喔，牙齒會不會痛？", c: "stool_chat", tip: "檢查口腔與吞嚥" },
+    { w: "e", t: "不會，這個軟軟的剛好。", e: "s.eat", fx: "heart" }
+  ]
+},
+{
+  id: "incont", cat: "bpsd", title: "尿濕了卻不肯換", bg: "bg_bedroom", mode: "stand", minutes: 1,
+  sub: "褲子濕了，長輩卻說：「我沒有尿！不用換！」",
+  think: "如果你尿濕褲子被大聲說出來，你會想承認嗎？",
+  why: ["尿失禁讓人非常羞愧，否認是在保護自尊。", "可能感覺不到濕、找不到廁所、來不及走到。", "當眾指出或責備，會讓他更抗拒照顧。"],
+  tips: [
+    { t: "小聲、私下說", d: "靠近、壓低聲音，不讓旁人聽到。" },
+    { t: "不責備、不說「尿」", d: "說「褲子換一件比較舒服」。" },
+    { t: "給台階下", d: "「剛剛水打翻了，換一件乾的」。" },
+    { t: "定時帶去廁所", d: "每 2～3 小時提醒一次，減少意外。" }
+  ],
+  say: ["（小聲）{稱}，褲子換一件乾的比較舒服。", "剛剛茶打翻了，我們去換一件。"],
+  avoid: ["你又尿褲子了！", "這麼大了還尿出來！"],
+  fam: "在廁所門上貼大字和圖示，晚上開小夜燈，讓廁所容易找到。",
+  wk: "協助更換時維護隱私：關門、拉窗簾、用毛巾遮蓋。",
+  bad: [
+    { w: "c", t: "{稱}！你又尿褲子了！", c: "point", x: 0.74, e: "calm" },
+    { w: "e", t: "我沒有尿！不用換！", e: "refuse", fx: "anger" },
+    { w: "c", t: "明明就濕了，快點換啦！", c: "hips" },
+    { w: "e", t: "不要！走開！", e: "angry", fx: "anger" }
+  ],
+  good: [
+    { w: "c", t: "{稱}，我跟你說一下。", c: "talk", x: 0.64, e: "calm", tip: "小聲、私下說" },
+    { w: "c", t: "剛剛茶好像打翻了，褲子換一件乾的比較舒服。", c: "listen", tip: "給台階下" },
+    { w: "e", t: "茶打翻了喔？", e: "confused", fx: "q" },
+    { w: "c", t: "對啊，我們進房間換，關起門來。", c: "talk", tip: "不責備、不說「尿」" },
+    { w: "e", t: "好，換一件。", e: "calm" },
+    { w: "c", t: "換好了，舒服多了齁。等一下吃完點心，我們順便去一下廁所。", c: "talk", tip: "定時帶去廁所" },
+    { w: "e", t: "好。", e: "calm", fx: "heart" }
+  ]
+},
+{
+  id: "useless", cat: "bpsd", title: "情緒低落，說「活著沒用」", bg: "bg_living", mode: "sit", minutes: 1,
+  sub: "長輩嘆氣說：「我這樣拖累你們，活著有什麼用。」",
+  think: "聽到這句話時，你會想趕快說「不要亂講」嗎？那樣他還說得下去嗎？",
+  why: ["失智初期常伴隨憂鬱：知道自己在退步，會害怕、自責。", "急著安慰「不要亂想」，等於把話題關起來。", "先聽、先陪，讓他把擔心說出來。若有輕生念頭要立即求助。"],
+  tips: [
+    { t: "先聽，不急著安慰", d: "「你覺得自己拖累大家，心裡很難過齁」。" },
+    { t: "肯定他的價值", d: "說出具體的事：「你教我的那道菜，全家都愛吃」。" },
+    { t: "一起做小事", d: "澆花、摺衣服，找回被需要的感覺。" },
+    { t: "注意危險訊號", d: "提到想死、交代後事，要求助醫師或撥 1925。" }
+  ],
+  say: ["你覺得拖累大家，心裡很難過齁。", "你教我的那道滷肉，全家都說好吃。"],
+  avoid: ["不要亂講啦！", "你好好的，想太多了。"],
+  fam: "安心專線 1925（24 小時）。持續情緒低落兩週以上，請帶長輩就醫。",
+  wk: "聽到輕生相關的話，務必當天通報督導與家屬，不要自己承擔。",
+  bad: [
+    { w: "e", t: "我這樣拖累你們，活著有什麼用。", e: "s.sad", c: "calm", x: 0.74 },
+    { w: "c", t: "不要亂講啦，你想太多了！", c: "talk" },
+    { w: "e", t: "……算了。", e: "s.sad", fx: "tear" }
+  ],
+  good: [
+    { w: "e", t: "我這樣拖累你們，活著有什麼用。", e: "s.sad", c: "stool_chat", x: 0.64 },
+    { w: "c", t: "你覺得拖累大家，心裡很難過齁。", c: "crouch_pat", tip: "先聽，不急著安慰" },
+    { w: "e", t: "對啊，什麼都要人家幫。", e: "s.sad", fx: "tear" },
+    { w: "c", t: "我知道。可是你教我的那道滷肉，{R:全家都說好吃|我回家煮給家人吃，大家都說讚}。", c: "crouch_talk", tip: "肯定他的價值" },
+    { w: "e", t: "真的喔？", e: "s.confused" },
+    { w: "c", t: "真的。等一下陪我去陽台澆花好不好？那些花只聽你的。", c: "crouch_talk", tip: "一起做小事" },
+    { w: "e", t: "好啦，我去看看。", e: "s.calm", fx: "heart", tip: "注意危險訊號" }
+  ]
+},
+{
+  id: "wakeup", cat: "daily", title: "早上叫起床", bg: "bg_bedroom", mode: "stand", minutes: 1,
+  sub: "已經九點了，長輩還不想起床。",
+  think: "被人掀開棉被叫醒，和被輕聲叫醒，一整天的心情會一樣嗎？",
+  why: ["剛睡醒時最混亂，不知道自己在哪、現在幾點。", "突然的聲音、拉開窗簾、掀被子會讓人受驚。", "給一個起床的「理由」，比單純催促有用。"],
+  tips: [
+    { t: "先拉開一點窗簾", d: "讓光慢慢進來，自然醒。" },
+    { t: "叫名字、說今天要做的事", d: "「早餐有你愛吃的饅頭」。" },
+    { t: "給時間慢慢起來", d: "先坐在床邊一分鐘，再站起來。" }
+  ],
+  say: ["{稱}早安，今天天氣很好。", "早餐有你愛吃的饅頭夾蛋喔。"],
+  avoid: ["都幾點了還在睡！", "（直接掀開棉被）"],
+  fam: "固定起床時間，搭配早餐、曬太陽，晚上會比較好睡。",
+  wk: "服務開始時先打招呼、自我介紹，再說要做的事。",
+  bad: [
+    { w: "c", t: "{稱}！都幾點了還在睡！起來啦！", c: "hips", x: 0.74, e: "anxious" },
+    { w: "e", t: "幹嘛啦！吵什麼！", e: "angry", fx: "anger" },
+    { w: "c", t: "快點起來啦！", c: "point" },
+    { w: "e", t: "我不要起來！", e: "refuse", fx: "anger" }
+  ],
+  good: [
+    { w: "c", t: "{稱}早安，我把窗簾拉開一點喔。", c: "talk", x: 0.68, e: "calm", tip: "先拉開一點窗簾", fx: "light" },
+    { w: "e", t: "嗯……幾點了？", e: "confused", fx: "q" },
+    { w: "c", t: "九點了。{自介}。今天天氣很好喔。", c: "talk", tip: "叫名字、說今天要做的事" },
+    { w: "c", t: "早餐有你愛吃的饅頭夾蛋。", c: "offer" },
+    { w: "e", t: "饅頭喔，好啊。", e: "calm" },
+    { w: "c", t: "不急，先坐一下，慢慢來。", c: "listen", tip: "給時間慢慢起來" },
+    { w: "e", t: "好，我起來了。", e: "laugh", fx: "spark" }
+  ]
+},
+{
+  id: "doctor", cat: "daily", title: "不想出門看醫生", bg: "bg_door", mode: "stand", minutes: 1,
+  sub: "今天要回診，長輩說：「我好好的，看什麼醫生！」",
+  think: "為什麼「我好好的」這句話，比「我很怕」更容易說出口？",
+  why: ["看醫生可能讓他害怕被發現「變笨」、被送去機構。", "出門要準備很多事，對他來說又累又亂。", "換個說法、安排好行程、給他一點期待，會比較願意。"],
+  tips: [
+    { t: "換個說法", d: "說「去拿藥」「量血壓」「順便去吃好吃的」。" },
+    { t: "把行程變簡單", d: "東西先準備好，出門前只要穿鞋。" },
+    { t: "給一個期待", d: "看完醫生去吃豆花、去公園走走。" },
+    { t: "請醫師配合", d: "事先寫紙條給醫師，不在長輩面前討論病情細節。" }
+  ],
+  say: ["{稱}，我們去拿藥、量個血壓，順便去吃豆花。", "東西我都準備好了，你穿鞋就好。"],
+  avoid: ["你失智了要去看醫生！", "你不去也得去！"],
+  fam: "在診間可以先寫一張重點紙條給醫師，避免在長輩面前一直說「他都忘東忘西」。",
+  wk: "陪同就醫前，向家屬確認要問醫師的問題與藥單。",
+  bad: [
+    { w: "c", t: "{稱}，今天要去看醫生，快點準備！", c: "hips", x: 0.74, e: "calm" },
+    { w: "e", t: "我好好的，看什麼醫生！", e: "refuse", fx: "anger" },
+    { w: "c", t: "你記憶越來越差了，一定要去看！", c: "point" },
+    { w: "e", t: "你才記憶差！我不去！", e: "angry", fx: "anger" }
+  ],
+  good: [
+    { w: "c", t: "{稱}，今天我們去拿藥、量個血壓。", c: "talk", x: 0.68, e: "calm", tip: "換個說法" },
+    { w: "e", t: "我好好的，看什麼醫生！", e: "refuse" },
+    { w: "c", t: "對啊，你身體很好，只是去拿藥，很快就好。", c: "listen" },
+    { w: "c", t: "東西我都準備好了，你穿鞋就好。", c: "offer", prop: "bag", tip: "把行程變簡單" },
+    { w: "e", t: "這麼快喔？", e: "confused" },
+    { w: "c", t: "拿完藥，我們去吃你最愛的豆花！", c: "talk", tip: "給一個期待" },
+    { w: "e", t: "豆花喔！那走吧。", e: "laugh", fx: "spark", tip: "請醫師配合" }
+  ]
+},
+{
+  id: "dress", cat: "daily", title: "天氣冷卻堅持穿短袖", bg: "bg_bedroom", mode: "stand", minutes: 1,
+  sub: "寒流來，長輩堅持只穿一件短袖，說：「我不冷！」",
+  think: "你會用「講道理」還是「換方法」來讓他多穿一件？",
+  why: ["對冷熱的感覺可能變遲鈍，真的不覺得冷。", "穿衣步驟多，穿外套很麻煩，就說不要。", "被命令會反抗；讓「穿外套」變成好事，就容易得多。"],
+  tips: [
+    { t: "把衣服放在順手的地方", d: "外套直接攤開遞過去，袖口打開。" },
+    { t: "用讚美代替命令", d: "「這件穿起來好有精神」。" },
+    { t: "自己也穿", d: "「我也穿外套，我們一樣」。" }
+  ],
+  say: ["{稱}，這件外套穿起來好有精神。", "我也穿外套，我們穿一樣的。"],
+  avoid: ["這麼冷穿短袖，你會感冒啦！", "你不穿我就不帶你出去！"],
+  fam: "衣櫃只留當季的衣服，減少選擇、減少穿錯季節。",
+  wk: "協助穿衣時先穿無力或疼痛的那一側，脫的時候反過來。",
+  bad: [
+    { w: "c", t: "{稱}，這麼冷你穿短袖，會感冒啦！", c: "point", x: 0.74, e: "calm" },
+    { w: "e", t: "我不冷！", e: "refuse", fx: "anger" },
+    { w: "c", t: "你不穿外套，就不帶你出去！", c: "hips" },
+    { w: "e", t: "不去就不去！", e: "angry", fx: "anger" }
+  ],
+  good: [
+    { w: "c", t: "{稱}，我也要穿外套，我們穿一樣的好不好？", c: "talk", x: 0.68, e: "calm", tip: "自己也穿" },
+    { w: "e", t: "我不冷啦。", e: "refuse" },
+    { w: "c", t: "這件紫色的，穿起來好有精神喔。", c: "offer", prop: "sweater", tip: "用讚美代替命令" },
+    { w: "e", t: "有嗎？", e: "confused" },
+    { w: "c", t: "袖子我幫你打開了，手伸進來就好。", c: "offer", tip: "把衣服放在順手的地方" },
+    { w: "e", t: "這樣喔……好啦。", e: "calm" },
+    { w: "c", t: "{稱}好帥氣，我們出發！", c: "talk", fx: "heart" },
+    { w: "e", t: "走吧！", e: "laugh", fx: "spark" }
+  ]
+},
+{
+  id: "firstvisit", cat: "daily", title: "不讓居服員進門", bg: "bg_door", mode: "stand", minutes: 1,
+  sub: "居服員第一次到府，長輩擋在門口：「我不用人照顧，你回去！」",
+  think: "一個陌生人說要來「照顧你」，你會覺得被幫忙，還是被看不起？",
+  why: ["「需要人照顧」等於承認自己不行了，自尊受傷。", "陌生人進家門，會擔心安全、隱私。", "從「朋友來聊天」「幫忙做事」開始，比「照顧」容易接受。"],
+  tips: [
+    { t: "不說「照顧」", d: "{R:介紹成「來幫忙的朋友」「我的同事」。|說「來陪你聊天」「幫忙一點家事」。}" },
+    { t: "第一次先不做照顧", d: "先聊天、一起喝茶，建立熟悉感。" },
+    { t: "找共同話題", d: "家鄉、老歌、以前的工作。" },
+    { t: "家屬先陪同幾次", d: "家人在場，長輩比較安心。" }
+  ],
+  say: ["{R:{稱}，這是來幫我忙的朋友。|{稱}好，{自介}，今天來陪你聊聊天。}", "我聽說你以前很會唱歌，教我一首好不好？"],
+  avoid: ["你現在需要人照顧了！", "這是政府派來照顧你的。"],
+  fam: "第一次服務請家屬在場，把居服員介紹成你信任的朋友。",
+  wk: "前幾次以建立關係為主，問家屬長輩的興趣、家鄉、以前的工作，帶著話題上門。",
+  bad: [
+    { w: "c", t: "{R:{稱}，以後有居服員來照顧你了！|{稱}，我是居服員，來照顧你的。}", c: "talk", x: 0.74, e: "calm" },
+    { w: "e", t: "我不用人照顧！你回去！", e: "refuse", fx: "anger" },
+    { w: "c", t: "{R:你現在就是需要人照顧啊！|是你家人申請的，我一定要進去。}", c: "point" },
+    { w: "e", t: "我不要！出去！", e: "angry", fx: "anger" }
+  ],
+  good: [
+    { w: "c", t: "{R:{稱}，等一下有一位朋友要來幫我忙，我們先坐一下。|{稱}好，{自介}，今天來陪你聊聊天。}", c: "talk", x: 0.68, e: "calm", tip: "不說「照顧」" },
+    { w: "e", t: "聊天喔？", e: "confused", fx: "q" },
+    { w: "c", t: "聽說你以前很會唱歌，可以教我一首嗎？", c: "listen", tip: "找共同話題" },
+    { w: "e", t: "唱歌喔，我以前在合唱團。", e: "laugh", fx: "music" },
+    { w: "c", t: "好厲害！我們坐下來喝杯茶，慢慢聊。", c: "offer", prop: "tea", tip: "第一次先不做照顧" },
+    { w: "e", t: "好啦，進來坐。", e: "calm", fx: "heart", tip: "家屬先陪同幾次" }
+  ]
+},
+{
+  id: "money", cat: "daily", title: "吵著要去銀行領錢", bg: "bg_living", mode: "sit", minutes: 1,
+  sub: "長輩焦急地說：「我的錢都不見了，我要去銀行領出來！」",
+  think: "長輩擔心的是「錢」本身，還是「沒有保障」？",
+  why: ["錢代表安全感和掌控感，害怕老了沒依靠。", "記不得錢放哪、存摺誰保管，就以為不見了。", "失智長輩也是詐騙的高風險族群，金錢管理要提早規劃。"],
+  tips: [
+    { t: "接住擔心", d: "「你擔心錢不夠用，對不對」。" },
+    { t: "給看得到的安心", d: "準備一個放少量現金的小錢包，讓他自己保管。" },
+    { t: "延後、不爭辯", d: "「銀行今天休息，明天我陪你去」。" },
+    { t: "提早做財產規劃", d: "了解意定監護、安養信託、輔助宣告。" }
+  ],
+  say: ["你擔心錢不夠用，對不對？", "你的錢包在這裡，裡面有錢喔。"],
+  avoid: ["你的錢都在我這裡，你不用管！", "你又亂說，錢哪有不見！"],
+  fam: "可以向銀行詢問安養信託；法律上可了解意定監護與輔助宣告，及早跟長輩一起討論。",
+  wk: "居服員不經手長輩的金錢與存摺；長輩提到錢的事，轉知家屬。",
+  bad: [
+    { w: "e", t: "我的錢都不見了！我要去銀行！", e: "s.anxious", c: "calm", x: 0.74, fx: "sweat" },
+    { w: "c", t: "{R:你的錢都在我這裡，你不用管啦！|你的錢又不是我管的，我不知道啦。}", c: "hips" },
+    { w: "e", t: "你們都想拿我的錢！", e: "s.angry", fx: "anger" }
+  ],
+  good: [
+    { w: "e", t: "我的錢都不見了！我要去銀行！", e: "s.anxious", c: "crouch_listen", x: 0.64, fx: "sweat" },
+    { w: "c", t: "你擔心錢不夠用，對不對？", c: "crouch_listen", tip: "接住擔心" },
+    { w: "e", t: "對啊，老了沒錢怎麼辦。", e: "s.sad" },
+    { w: "c", t: "你的錢包在這裡，你看，裡面有錢喔。", c: "crouch_offer", prop: "wallet", tip: "給看得到的安心" },
+    { w: "e", t: "喔，還有。", e: "s.calm" },
+    { w: "c", t: "銀行今天休息了，{R:明天我陪你去看看存摺。|我請你家人明天陪你去看存摺。}", c: "crouch_talk", tip: "延後、不爭辯" },
+    { w: "e", t: "好，明天去。", e: "s.calm", fx: "heart", tip: "提早做財產規劃" }
+  ]
+}
+);
+
+</script>
+<script>
+// 失智溝通紙偶劇場：資料庫列表＋紙偶播放器
+(function () {
+var $ = function (s, r) { return (r || document).querySelector(s); };
+var CATS = { basic: "溝通基本功", bpsd: "行為與精神症狀", daily: "日常照顧" };
+var EL_POSE = { calm: 1, laugh: 2, confused: 3, anxious: 4, angry: 5, sad: 6, refuse: 7, leave: 8 };
+var EL_SIT = { "s.calm": 1, "s.talk": 2, "s.confused": 3, "s.anxious": 3, "s.angry": 4, "s.sad": 5, "s.push": 6, "s.eat": 7, "s.album": 8 };
+var CG_POSE = { calm: "a1", talk: "a2", listen: "a3", offer: "a4", hips: "a5", point: "a6", sigh: "a7", walk: "a8",
+  crouch_talk: "b1", crouch_hand: "b2", crouch_listen: "b3", stool_chat: "b4", stool_point: "b5", crouch_offer: "b6", kneel_soothe: "b7", crouch_pat: "b8" };
+var EL_X = 0.29;
+// 各角色站姿高度（佔舞台高度）
+var TALL = { ama: 0.55, agong: 0.585, wf: 0.65, wm: 0.69, ff: 0.64, fm: 0.68 };
+
+var state = { el: "ama", cg: "ff", cat: "all", q: "" };
+try { var sv = JSON.parse(localStorage.getItem("dt_cast") || "null"); if (sv && CAST[sv.el] && CAST[sv.cg]) { state.el = sv.el; state.cg = sv.cg; } } catch (e) {}
+function save() { try { localStorage.setItem("dt_cast", JSON.stringify({ el: state.el, cg: state.cg })); } catch (e) {} }
+function T(t) { return fillText(t, state.el, state.cg); }
+function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
+
+// ---------- 紙偶圖 ----------
+function elImg(pose, mode) {
+  var sit = pose && pose.indexOf("s.") === 0;
+  if (!pose) sit = mode === "sit";
+  var n = sit ? (EL_SIT[pose] || 1) : (EL_POSE[pose] || 1);
+  var sheet = state.el + (sit ? "_b" : "_a");
+  return { src: "img/pz/" + sheet + "_" + n + ".webp", wh: PZ[sheet][n - 1], ch: state.el };
+}
+function cgImg(pose) {
+  var k = CG_POSE[pose] || "a1", sheet = state.cg + "_" + k[0], n = +k[1];
+  return { src: "img/pz/" + sheet + "_" + n + ".webp", wh: PZ[sheet][n - 1], ch: state.cg };
+}
+function sizePup(node, im) {
+  var hPct = im.wh[1] / PZ[im.ch + "_a"][0][1] * TALL[im.ch] * 100;               // 佔舞台高度 %
+  var wPct = hPct * (im.wh[0] / im.wh[1]) * 9 / 16;       // 換算成寬度 %
+  node.style.width = wPct + "%";
+  node._w = wPct; node._h = hPct;
+}
+function placePup(node) { node.style.left = (node._x * 100 - node._w / 2) + "%"; }
+function makePup(flip) {
+  var d = document.createElement("div"); d.className = "pup" + (flip ? " flip" : "");
+  d.innerHTML = '<div class="body"><img alt=""><div class="shadow"></div></div>';
+  return d;
+}
+function setPose(node, im) {
+  var img = node.querySelector("img");
+  if (img.getAttribute("src") === im.src) return;
+  img.src = im.src; sizePup(node, im); placePup(node);
+  node.classList.remove("swap"); void node.offsetWidth; node.classList.add("swap");
+}
+
+// ---------- 首頁 ----------
+function castBar() {
+  var b = $("#castbar");
+  var face = { ama: "ama_a_1", agong: "agong_a_1", wf: "wf_a_1", wm: "wm_a_1", ff: "ff_a_1", fm: "fm_a_1" };
+  function chip(k, group, label) {
+    var on = state[group] === k;
+    return '<button class="chip" data-g="' + group + '" data-k="' + k + '" aria-pressed="' + on + '"><img src="img/pz/' + face[k] + '.webp" alt="">' + label + "</button>";
+  }
+  b.innerHTML = '<span class="lab">我是</span><div class="chips">' +
+    chip("ff", "cg", "女兒（家屬）") + chip("fm", "cg", "兒子（家屬）") + chip("wf", "cg", "女居服員") + chip("wm", "cg", "男居服員") +
+    '</div><span class="lab">陪伴的是</span><div class="chips">' + chip("ama", "el", "阿嬤") + chip("agong", "el", "阿公") + "</div>" +
+    '<div class="castnote">' + (CAST[state.cg].role === "f" ? "家屬版：你叫長輩「" + (state.el === "ama" ? "媽" : "爸") + "」，會看到家屬提醒。" : "居服員版：你叫長輩「" + CAST[state.el].name + "」，每次見面先自我介紹，會看到居服員提醒。") + "</div>";
+  b.onclick = function (e) {
+    var c = e.target.closest(".chip"); if (!c) return;
+    state[c.dataset.g] = c.dataset.k; save(); castBar(); grid();
+  };
+}
+function tabs() {
+  var t = $("#tabs"), n = { all: SCENARIOS.length };
+  SCENARIOS.forEach(function (s) { n[s.cat] = (n[s.cat] || 0) + 1; });
+  var h = "";
+  [["all", "全部情境"], ["basic", CATS.basic], ["bpsd", CATS.bpsd], ["daily", CATS.daily]].forEach(function (c) {
+    h += '<button class="tab" role="tab" data-c="' + c[0] + '" aria-selected="' + (state.cat === c[0]) + '">' + c[1] + '<span class="n">' + n[c[0]] + "</span></button>";
+  });
+  h += '<input class="search" id="q" type="search" placeholder="搜尋：洗澡、吃藥、回家…" aria-label="搜尋情境">';
+  t.innerHTML = h;
+  t.onclick = function (e) { var b = e.target.closest(".tab"); if (!b) return; state.cat = b.dataset.c; tabs(); grid(); };
+  var q = $("#q"); q.value = state.q; q.oninput = function () { state.q = q.value.trim(); grid(); };
+}
+function thumb(s) {
+  // 靜態縮圖：用建議做法最後一句的姿勢
+  var st = document.createElement("div"); st.className = "stage thumb";
+  st.innerHTML = '<img class="bg" style="animation:none;inset:0;width:100%;height:100%" src="img/bg/' + s.bg + '.webp" alt="" loading="lazy">';
+  var ep = null, cp = null, cx = null;
+  s.good.forEach(function (l) { if (l.e) ep = l.e; if (l.c) cp = l.c; if (l.x) cx = l.x; });
+  var e = makePup(false), c = makePup(true);
+  e._x = EL_X; c._x = cx || 0.68;
+  [[e, elImg(ep, s.mode)], [c, cgImg(cp)]].forEach(function (p) { var img = p[0].querySelector("img"); img.loading = "lazy"; img.src = p[1].src; sizePup(p[0], p[1]); placePup(p[0]); p[0].querySelector(".body").style.animation = "none"; st.appendChild(p[0]); });
+  return st;
+}
+function grid() {
+  var g = $("#grid"); g.innerHTML = "";
+  var q = state.q;
+  SCENARIOS.forEach(function (s, i) {
+    if (state.cat !== "all" && s.cat !== state.cat) return;
+    if (q) { var hay = s.title + T(s.sub) + s.tips.map(function (t) { return t.t; }).join(""); if (hay.indexOf(q) < 0) return; }
+    var b = document.createElement("button"); b.className = "card"; b.onclick = function () { location.hash = "s-" + s.id; };
+    b.appendChild(thumb(s));
+    b.insertAdjacentHTML("beforeend", '<span class="pill c-' + s.cat + '">' + CATS[s.cat] + "</span><h3>" + esc(s.title) + "</h3><p>" + esc(T(s.sub)) + "</p>");
+    g.appendChild(b);
+  });
+  if (!g.children.length) g.innerHTML = '<p style="color:var(--ink2)">找不到符合的情境，換個關鍵字試試。</p>';
+}
+
+// ---------- 播放器 ----------
+var P = null; // 目前播放器
+var FX = {
+  q: '<svg viewBox="0 0 60 60"><text x="8" y="44" font-size="42" font-weight="700" fill="#3b64a0" font-family="Fraunces,serif">?</text><text x="34" y="30" font-size="26" font-weight="700" fill="#3b64a0" font-family="Fraunces,serif" transform="rotate(14 40 20)">?</text></svg>',
+  anger: '<svg viewBox="0 0 60 60" fill="none" stroke="#c0392b" stroke-width="6" stroke-linecap="round"><path d="M14 22c6 0 8-2 8-8M38 14c0 6 2 8 8 8M46 38c-6 0-8 2-8 8M22 46c0-6-2-8-8-8"/></svg>',
+  sweat: '<svg viewBox="0 0 60 60"><path d="M30 6C22 22 16 30 16 38a14 14 0 0 0 28 0c0-8-6-16-14-32z" fill="#8fc3ea" stroke="#fff" stroke-width="3"/></svg>',
+  tear: '<svg viewBox="0 0 60 60"><path d="M22 10c-5 10-9 15-9 20a9 9 0 0 0 18 0c0-5-4-10-9-20zM42 26c-4 8-7 12-7 16a7 7 0 0 0 14 0c0-4-3-8-7-16z" fill="#8fc3ea" stroke="#fff" stroke-width="2.5"/></svg>',
+  heart: '<svg viewBox="0 0 60 60"><path d="M30 52S6 37 6 21a12 12 0 0 1 24-4 12 12 0 0 1 24 4c0 16-24 31-24 31z" fill="#e07a8a" stroke="#fff" stroke-width="3"/></svg>',
+  spark: '<svg viewBox="0 0 60 60" fill="#e9b949" stroke="#fff" stroke-width="2"><path d="M30 2l6 20 20 8-20 6-6 22-6-22-20-6 20-8z"/></svg>',
+  music: '<svg viewBox="0 0 60 60" fill="#6e4f9e"><path d="M20 10v28a8 8 0 1 0 5 7V20l22-6v18a8 8 0 1 0 5 7V4z"/></svg>',
+  zz: '<svg viewBox="0 0 60 60"><text x="6" y="48" font-size="30" font-weight="700" fill="#6e4f9e" font-family="Fraunces,serif">z</text><text x="28" y="28" font-size="22" font-weight="700" fill="#6e4f9e" font-family="Fraunces,serif">z</text></svg>',
+  shock: '<svg viewBox="0 0 60 60" fill="none" stroke="#2f2a26" stroke-width="5" stroke-linecap="round"><path d="M10 30H2M16 14 9 7M30 10V2M44 14l7-7M50 30h8"/></svg>'
+};
+function openLesson(id) {
+  var s = SCENARIOS.filter(function (x) { return x.id === id; })[0];
+  if (!s) { location.hash = ""; return; }
+  stopPlayer();
+  $("#home").hidden = true; var L = $("#lesson"); L.hidden = false; window.scrollTo(0, 0);
+  var me = CAST[state.cg].role;
+  var who = { e: CAST[state.el].name, c: CAST[state.cg].name };
+  var idx = SCENARIOS.indexOf(s), prev = SCENARIOS[idx - 1], next = SCENARIOS[idx + 1];
+  // 練習題：建議做法中長輩說完、照顧者接話
+  var pr = [];
+  s.good.forEach(function (l, i) { var n = s.good[i + 1]; if (l.w === "e" && n && n.w === "c" && pr.length < 3) pr.push([l, n]); });
+  L.innerHTML =
+    '<button class="back" id="back">← 回到全部情境</button>' +
+    '<div class="lhead"><span class="pill c-' + s.cat + '">' + CATS[s.cat] + "</span><h2>" + esc(s.title) + "</h2></div>" +
+    '<p class="situ">' + esc(T(s.sub)) + "</p>" +
+    '<div class="player"><div class="vers">' +
+      '<button class="ver b" data-v="bad"><span class="mk">✗</span><span>常見反應<small>看看哪裡卡住了</small></span></button>' +
+      '<button class="ver g" data-v="good"><span class="mk">✓</span><span>建議做法<small>換個方式說說看</small></span></button></div>' +
+      '<div class="stage" id="stage"></div>' +
+      '<div class="prog" id="prog"></div>' +
+      '<div class="ctrl"><button class="cb main" id="play">▶ 播放</button><button class="cb" id="prevl">⏮ 上一句</button><button class="cb" id="nextl">下一句 ⏭</button>' +
+      '<button class="cb" id="stepm" aria-pressed="false">逐句暫停</button><button class="cb" id="capb" aria-pressed="true">字幕</button>' +
+      '<button class="cb sp" id="spd">語速 1.0×</button><button class="cb" id="fsb">⛶ 全螢幕</button></div></div>' +
+    '<div class="cols"><div>' +
+      '<div class="sheet"><h3><span class="k">01</span>先想一想</h3><p class="think">' + esc(T(s.think)) + "</p></div>" +
+      '<div class="sheet"><h3><span class="k">02</span>溝通技巧</h3><ul class="tiplist">' + s.tips.map(function (t, i) { return '<li><span class="no">' + (i + 1) + "</span><b>" + esc(T(t.t)) + "</b><span>" + esc(T(t.d)) + "</span></li>"; }).join("") + "</ul></div>" +
+      '<div class="sheet"><h3><span class="k">03</span>這樣說／避免這樣說</h3><div class="saybox"><div class="y"><h4>✓ 可以這樣說</h4><ul>' + s.say.map(function (x) { return "<li>" + esc(T(x)) + "</li>"; }).join("") + '</ul></div><div class="n"><h4>✗ 避免這樣說</h4><ul>' + s.avoid.map(function (x) { return "<li>" + esc(T(x)) + "</li>"; }).join("") + "</ul></div></div></div>" +
+    "</div><div>" +
+      '<div class="sheet"><h3><span class="k">04</span>為什麼會這樣</h3><ul class="why">' + s.why.map(function (x) { return "<li>" + esc(T(x)) + "</li>"; }).join("") + "</ul>" +
+        '<div class="role' + (me === "f" ? " me" : "") + '"><b>給家屬</b><p>' + esc(T(s.fam)) + "</p></div>" +
+        '<div class="role' + (me === "w" ? " me" : "") + '"><b>給居服員</b><p>' + esc(T(s.wk)) + "</p></div></div>" +
+      '<div class="sheet"><h3><span class="k">05</span>換你說說看</h3><div class="prac">' + pr.map(function (p, i) {
+        return '<div class="pq"><div class="e" data-who="' + who.e + '">' + esc(T(p[0].t)) + '</div><button data-i="' + i + '">想好了，看參考說法</button><div class="a" hidden>' + esc(T(p[1].t)) + (p[1].tip ? "<small>技巧：" + esc(p[1].tip) + "</small>" : "") + "</div></div>";
+      }).join("") + "</div></div>" +
+    "</div></div>" +
+    '<div class="nav2">' + (prev ? '<button data-go="' + prev.id + '"><small>上一個情境</small>' + esc(prev.title) + "</button>" : "<span></span>") +
+      (next ? '<button data-go="' + next.id + '"><small>下一個情境</small>' + esc(next.title) + "</button>" : "") + "</div>";
+  $("#back").onclick = function () { location.hash = ""; };
+  L.querySelectorAll("[data-go]").forEach(function (b) { b.onclick = function () { location.hash = "s-" + b.dataset.go; }; });
+  L.querySelectorAll(".pq button").forEach(function (b) { b.onclick = function () { b.nextElementSibling.hidden = false; b.hidden = true; }; });
+  P = player(s, $("#stage"));
+}
+
+function player(s, stage) {
+  var key = s.id + "_" + state.el + "_" + state.cg, tim = AUDIO[key];
+  var audio = new Audio("audio/" + key + ".mp3"); audio.preload = "auto";
+  var me = { s: s, ver: "bad", i: -1, playing: false, step: false, rate: 1, timer: null, raf: null, segEnd: 0 };
+  stage.innerHTML = '<img class="bg" src="img/bg/' + s.bg + '.webp" alt=""><div class="glow"></div><div class="vig"></div><div class="tips"></div><div class="cap"></div>';
+  var E = makePup(false), C = makePup(true); stage.appendChild(E); stage.appendChild(C);
+  var bub = document.createElement("div"); bub.className = "bubble"; stage.appendChild(bub);
+  var tips = $(".tips", stage), cap = $(".cap", stage);
+  var stamp = document.createElement("div"); stamp.className = "stamp"; stage.appendChild(stamp);
+  var over = null, fxN = [];
+  var who = { e: CAST[state.el].name, c: CAST[state.cg].name };
+
+  function lines() { return s[me.ver]; }
+  function reset() {
+    E._x = EL_X; C._x = (lines()[0].x || 0.72);
+    var ep = null, cp = null; lines().some(function (l) { if (!ep && l.e) ep = l.e; if (!cp && l.c) cp = l.c; return ep && cp; });
+    setPose(E, elImg(ep, s.mode)); setPose(C, cgImg(cp || "calm"));
+    stage.classList.remove("lit"); tips.innerHTML = ""; bub.classList.remove("on"); cap.classList.remove("on"); clearFx();
+    stamp.className = "stamp " + me.ver; stamp.textContent = me.ver === "bad" ? "✗ 常見反應" : "✓ 建議做法";
+    document.querySelectorAll(".ver").forEach(function (b) { b.setAttribute("aria-pressed", b.dataset.v === me.ver); });
+    prog();
+  }
+  function clearFx() { fxN.forEach(function (n) { n.remove(); }); fxN = []; }
+  function prog() {
+    var p = $("#prog"); if (!p) return;
+    p.innerHTML = lines().map(function (l, i) { return '<i class="' + (i < me.i ? "done" : i === me.i ? "cur" : "") + '" data-i="' + i + '" title="第 ' + (i + 1) + ' 句"></i>'; }).join("");
+  }
+  function headPos(node) { // 角色頭頂（舞台 %）
+    return { x: node._x * 100, top: 100 - 4 - node._h };
+  }
+  function showLine(i) {
+    var l = lines()[i]; me.i = i; prog(); clearFx();
+    if (over) { over.remove(); over = null; }
+    var cur = { e: null, c: null };
+    // 套用到這一句為止的姿勢與位置
+    var ls = lines(); var ep, cp, cx = ls[0].x || 0.72, lit = false;
+    for (var k = 0; k <= i; k++) { if (ls[k].e) ep = ls[k].e; if (ls[k].c) cp = ls[k].c; if (ls[k].x) cx = ls[k].x; if (ls[k].fx === "light") lit = true; }
+    setPose(E, elImg(ep, s.mode)); setPose(C, cgImg(cp || "calm")); C._x = cx; placePup(C);
+    stage.classList.toggle("lit", lit);
+    // 技巧標籤
+    tips.innerHTML = "";
+    if (me.ver === "good") for (k = 0; k <= i; k++) if (ls[k].tip) tips.insertAdjacentHTML("beforeend", '<div class="tipl" style="animation-delay:' + (k === i ? ".15s" : "0s;animation:none") + '">✓ ' + esc(ls[k].tip) + "</div>");
+    // 說話者
+    var sp = l.w === "e" ? E : C, other = l.w === "e" ? C : E;
+    sp.classList.add("talk"); other.classList.remove("talk");
+    var text = T(l.t), hp = headPos(sp);
+    bub.innerHTML = '<span class="who">' + (l.w === "e" ? who.e : who.c) + "</span>" + esc(text);
+    bub.classList.remove("on"); void bub.offsetWidth;
+    var bw = 44; // max width %
+    var left = l.w === "e" ? Math.max(2, hp.x - 10) : Math.min(98 - bw, hp.x - bw + 12);
+    bub.style.left = left + "%"; bub.style.right = "auto";
+    bub.style.bottom = Math.min(100 - 4, (100 - hp.top) + 3) + "%";
+    bub.style.top = "auto";
+    bub.style.setProperty("--tail", l.w === "e" ? "14%" : "78%");
+    if (l.w === "c") { bub.style.left = "auto"; bub.style.right = Math.max(2, 100 - hp.x - 10) + "%"; }
+    bub.classList.add("on");
+    cap.textContent = (l.w === "e" ? who.e : who.c) + "：" + text; cap.classList.add("on");
+    // 特效（長輩情緒顯示在長輩頭邊，照顧者說話時的 heart/spark 也放長輩）
+    if (l.fx && FX[l.fx]) {
+      var tgt = (l.w === "e" || ["heart", "spark", "music", "zz"].indexOf(l.fx) < 0) ? (l.w === "e" ? E : C) : E;
+      if (l.fx === "heart" || l.fx === "spark" || l.fx === "music") tgt = E;
+      var f = document.createElement("div"); f.className = "fx"; f.innerHTML = FX[l.fx];
+      var th = headPos(tgt); f.style.left = (th.x + (tgt === E ? 4 : -11)) + "%"; f.style.top = (th.top - 2) + "%";
+      stage.appendChild(f); fxN.push(f);
+    }
+    if (l.prop && PZ.props[l.prop]) {
+      var pr = document.createElement("div"); pr.className = "prop"; pr.innerHTML = '<img src="img/pz/prop_' + l.prop + '.webp" alt="">';
+      var ph = headPos(sp), hx = sp === E ? ph.x + E._w * 0.32 : ph.x - C._w * 0.42;
+      pr.style.left = (hx - 4.2) + "%"; pr.style.top = (ph.top + sp._h * 0.42) + "%";
+      stage.appendChild(pr); fxN.push(pr);
+    }
+    // 播放這句
+    var tm = tim && tim[me.ver] && tim[me.ver][i];
+    var dur = 0;
+    if (tm && tm[0] != null) {
+      audio.playbackRate = me.rate; audio.currentTime = tm[0]; me.segEnd = tm[0] + tm[1];
+      if (me.playing) { var pp = audio.play(); if (pp && pp.catch) pp.catch(function () {}); }
+      dur = tm[1] / me.rate;
+    } else dur = 1.6;
+    clearTimeout(me.timer); cancelAnimationFrame(me.raf);
+    var t0 = performance.now();
+    (function tick() {
+      if (tm && tm[0] != null && audio.currentTime >= me.segEnd - 0.02) audio.pause();
+      var done = (tm && tm[0] != null) ? (audio.currentTime >= me.segEnd - 0.03 || (performance.now() - t0) / 1000 > dur + 1.5) : (performance.now() - t0) / 1000 > dur;
+      if (!me.playing) return;
+      if (done) { audio.pause(); sp.classList.remove("talk"); me.timer = setTimeout(after, ((l.pause || 0) + 0.45) * 1000 / me.rate); return; }
+      me.raf = requestAnimationFrame(tick);
+    })();
+  }
+  function after() {
+    if (!me.playing) return;
+    if (me.i + 1 < lines().length) {
+      if (me.step) { pause(); return; }
+      showLine(me.i + 1);
+    } else end();
+  }
+  function end() {
+    pause(); bub.classList.remove("on"); cap.classList.remove("on"); E.classList.remove("talk"); C.classList.remove("talk");
+    over = document.createElement("div"); over.className = "over";
+    if (me.ver === "bad") {
+      over.innerHTML = '<div class="box"><h3>停一下，想一想</h3><p>' + esc(T(s.think)) + '</p><button class="bigbtn cobalt" data-a="good">✓ 看建議做法</button><button class="bigbtn ghost" data-a="again">↺ 再看一次</button></div>';
+    } else {
+      over.innerHTML = '<div class="box"><h3>這一段用到的技巧</h3><ul>' + s.tips.map(function (t) { return "<li>" + esc(T(t.t)) + "</li>"; }).join("") + '</ul><button class="bigbtn" data-a="again">↺ 再看一次</button><button class="bigbtn ghost" data-a="bad">✗ 對照常見反應</button></div>';
+    }
+    stage.appendChild(over);
+    over.onclick = function (e) { var a = e.target.dataset.a; if (!a) return; if (a !== "again") me.ver = a; start(); };
+  }
+  function pause() { me.playing = false; audio.pause(); clearTimeout(me.timer); cancelAnimationFrame(me.raf); E.classList.remove("talk"); C.classList.remove("talk"); btn(); }
+  function play() {
+    if (over) { over.remove(); over = null; if (me.i >= lines().length - 1) { start(); return; } }
+    me.playing = true; btn();
+    showLine(me.i < 0 ? 0 : (me.i >= lines().length - 1 && !me.step ? 0 : (me.step && me.i >= 0 ? Math.min(me.i + 1, lines().length - 1) : me.i)));
+  }
+  function start() { if (over) { over.remove(); over = null; } me.i = -1; reset(); me.playing = true; btn(); showLine(0); }
+  function btn() { var b = $("#play"); if (b) b.textContent = me.playing ? "❚❚ 暫停" : "▶ 播放"; }
+  function go(i) { i = Math.max(0, Math.min(lines().length - 1, i)); var was = me.playing; me.playing = true; btn(); showLine(i); if (!was) { me.playing = false; setTimeout(function () { audio.play().catch(function () {}); me.playing = true; btn(); }, 0); } }
+
+  reset();
+  // 開場卡
+  over = document.createElement("div"); over.className = "over";
+  over.innerHTML = '<div class="box"><h3>' + esc(s.title) + "</h3><p>" + esc(T(s.sub)) + '</p><button class="bigbtn rose" data-a="bad">✗ 先看常見反應</button><button class="bigbtn cobalt" data-a="good">✓ 直接看建議做法</button></div>';
+  stage.appendChild(over);
+  over.onclick = function (e) { var a = e.target.dataset.a; if (!a) return; me.ver = a; start(); };
+
+  $("#play").onclick = function () { me.playing ? pause() : play(); };
+  $("#prevl").onclick = function () { go(me.i - 1); };
+  $("#nextl").onclick = function () { go(me.i + 1); };
+  $("#stepm").onclick = function () { me.step = !me.step; this.setAttribute("aria-pressed", me.step); };
+  $("#capb").onclick = function () { var on = this.getAttribute("aria-pressed") !== "true"; this.setAttribute("aria-pressed", on); stage.classList.toggle("nocap", !on); };
+  var rates = [0.8, 1, 1.2]; $("#spd").onclick = function () { me.rate = rates[(rates.indexOf(me.rate) + 1) % 3]; this.textContent = "語速 " + me.rate.toFixed(1) + "×"; audio.playbackRate = me.rate; };
+  document.querySelectorAll(".ver").forEach(function (b) { b.onclick = function () { me.ver = b.dataset.v; start(); }; });
+  $("#prog").onclick = function (e) { var i = e.target.dataset.i; if (i != null) go(+i); };
+  $("#fsb").onclick = function () {
+    var pl = stage.parentNode;
+    try { if (document.fullscreenElement) document.exitFullscreen(); else if (pl.requestFullscreen) pl.requestFullscreen().catch(function () {}); } catch (e) {}
+  };
+  me.stop = function () { pause(); audio.src = ""; };
+  return me;
+}
+function stopPlayer() { if (P && P.stop) P.stop(); P = null; }
+
+function route() {
+  var m = location.hash.match(/^#s-([\w-]+)/);
+  if (m) openLesson(m[1]);
+  else { stopPlayer(); $("#lesson").hidden = true; $("#home").hidden = false; castBar(); grid(); }
+}
+tabs(); castBar(); grid();
+window.addEventListener("hashchange", route); route();
+})();
+
+</script>
+
+</body></html>
